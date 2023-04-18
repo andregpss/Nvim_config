@@ -2,7 +2,12 @@
 Neovim config files, including configurations for Latex, Haskell, Grammarly and C/C++
 (https://dotfyle.com/andregpss)
 
-**Install the following external apps:**
+**Table Of Contents**
+- [Install the following external apps:](#install-the-following-external-apps)
+- [Main Shortcuts](#main-shortcuts)
+
+
+# Install the following external apps
 
 1. Latex 
    - Latex compiler
@@ -27,7 +32,7 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
    - MuPDF (Alternate PDF viewer)
    - MuTool (PDF editing)
 
-**MAIN SHORTCUTS**
+# Main Shortcuts
 
 - **COC**
 	- K - mostra documentação da função
