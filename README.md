@@ -22,6 +22,6 @@ It is necessary to install the following external apps:
 5. Other
     - ctags
 6. Maybe necessary (test)
-   - Texlab 
-   - MuTool
-   - MuPDF
+   - Texlab (Latex LSP)
+   - MuPDF (Alternate PDF viewer)
+   - MuTool (PDF editing)
