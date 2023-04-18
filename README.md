@@ -26,3 +26,45 @@ It is necessary to install the following external apps:
    - Texlab (Latex LSP)
    - MuPDF (Alternate PDF viewer)
    - MuTool (PDF editing)
+
+MAIN SHORTCUTS
+- VimTex
+  - \lt - tags do latex	-
+  - \ll - compile latex
+  - \lv - view pdf
+  - \le - view latex erros
+  - \lc - clear temporary files
+  - Move
+    - Move between section boundaries with [[, [], ][, and ]]
+    - Move between environment boundaries with [m, [M, ]m, and ]M
+    - Move between comment boundaries with [* and ]*
+    - Move between matching delimiters with %
+  - vim-surround
+    - yssc <digitar comando> (envolve a linha posicionada com o comando). Ex: yssc textit
+    - ysse <digitar environment> (idem para o environment). Ex: ysse tabular
+    - ysee ou ysec (mesma coisa para a palavra posicionada)
+- Grammarly (LSPConfig)
+  - [d, ]d (navega entre os erros)
+  - space> e (mostra o menu flutuante)
+  - <space> rn (rename)
+  - <space> ca (code action; aplica as sugestões de alteração no código)
+-Other
+  - Airline Tab
+    - :echo g:airline_symbols - símbolos usados na linha de status
+  - :AirlineTheme <theme>			
+    - Tab, ShiftTab, \1, \2, \3			
+    - :bnext, :bprevious, :bfirst			
+    - :blast, :b10, :b <buffer-name>, :bdelete[!], :badd
+  - Syntastic (Linguagem c)
+    - :lnext, :lprevious (navega entre erros) - 	Syntastic
+    - [e, ]e (atalhos para navegar entre erros)
+    - :Errors (abre janela de erros)			Syntastic
+  - TagBar
+    - :tjump foo<tab>	- pula para tag		Tagbar
+    - F8 - mostra tagbar				Tagbar
+  - FZV, VimProc, VIM-FUGITIVE (git), rhubarb
+    - :History - últimos arquivos usados		
+    - :VimProcBang <comando do SO em uso>	
+    - :G - git status						- 
+    - :Gcommit, :Gpush, :Gpull				
+    - :Git	
