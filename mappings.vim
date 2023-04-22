@@ -23,7 +23,7 @@ noremap <leader>w :bn<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
-
+nmap gm :LivedownToggle<CR>
 
 "Executa o comando tag mais a palavra atual.
 nmap <leader>d :exec "tag ".expand("<cword>")<CR>

@@ -40,6 +40,11 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
 set mouse=a
 set inccommand=split
+
+" change the direction of new splits
+set splitbelow
+set splitright
+
 "%s/<palavra a ser substituida>/<palavra nova>/g
 "let mapleader="\<space>"
 "let <leader>sv :souce $MYVIMRC

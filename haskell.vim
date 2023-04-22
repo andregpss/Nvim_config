@@ -2,7 +2,19 @@
 "Para executar: <leader>gq
 setg formatprg=stylish-haskell
 
+lua << EOF
+local navbuddy = require("nvim-navbuddy")
 
+require('lspconfig')['hls'].setup{
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
+
+require'lspconfig'.hls.setup{
+        on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+}
+EOF
 
 "Para reconhecer tags em codigo Haskell
 let g:tagbar_type_haskell = {

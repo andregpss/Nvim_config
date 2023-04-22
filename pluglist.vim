@@ -24,7 +24,7 @@ Plug 'lervag/vimtex'
     let g:tex_flavor='latex'
 
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'tpope/vim-commentary' 	"Atalhos para comentario
+"Plug 'tpope/vim-commentary' 	"Atalhos para comentario
 Plug 'tpope/vim-fugitive'		"GIT atalhos
 Plug 'vim-airline/vim-airline'	"Barra de status
 Plug 'vim-airline/vim-airline-themes' "Esquema de cores para barra de status
@@ -43,22 +43,11 @@ Plug 'tpope/vim-rhubarb' 	" required by fugitive to :Gbrowse
 Plug 'neovim/nvim-lspconfig'
 Plug 'tpope/vim-surround'
 
-"Plug 'w0rp/ale' 				"Incompativel com o HIE Haskell Engine
-"Plug 'avelino/vim-bootstrap-updater' "Acredito que atualiza o vimrc
-"Plug 'jistr/vim-nerdtree-tabs' "Now togheter with nerd trees
-"Plug 'vim-scripts/CSApprox'		"Adapta Colorshemes para uso em terminal
-"Plug 'neovimhaskell/haskell-vim'
-
-"Plug-Ins adicionais recomendados pelo vim-bootstrap
-" FZF is a bundle of fzf-based commands and mappings
-" fzf is a general-purpose command-line fuzzy finder.
-" NECESSARY On Windows to download executable
 if isdirectory('/usr/local/opt/fzf') 
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
-  "  Plug 'wbthomason/packer.nvim'
 endif
 
 "NECESSARIO construir dll com Mingw C:\MinGW\bin OU baixar versão pré-compilada.
@@ -73,11 +62,29 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 " Molokai color scheme 
 Plug 'tomasr/molokai'
-
-"Plug-ins secundários adicionados por mim
 Plug 'vim-syntastic/syntastic'
+Plug 'shime/vim-livedown' "Preview Markdown Readme
+
+"Following plugs are necessary for NavBuddy plugin
+Plug 'SmiteshP/nvim-navic'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'numToStr/Comment.nvim'        " Optional
+Plug 'nvim-telescope/telescope.nvim' " Optional
+Plug 'SmiteshP/nvim-navbuddy'
+
 "O devicons deve ser o ultimo; caso contrario, nao eh exibido no status
 Plug 'ryanoasis/vim-devicons'
+"Plug 'wbthomason/packer.nvim'
+"Plug 'w0rp/ale' 				"Incompativel com o HIE Haskell Engine
+"Plug 'avelino/vim-bootstrap-updater' "Acredito que atualiza o vimrc
+"Plug 'jistr/vim-nerdtree-tabs' "Now togheter with nerd trees
+"Plug 'vim-scripts/CSApprox'		"Adapta Colorshemes para uso em terminal
+"Plug 'neovimhaskell/haskell-vim'
+
+"Plug-Ins adicionais recomendados pelo vim-bootstrap
+" FZF is a bundle of fzf-based commands and mappings
+" fzf is a general-purpose command-line fuzzy finder.
+" NECESSARY On Windows to download executable
 ""Para salvar seções; acho desnecessario, por enquanto.
 "" Vim-Session
 "Plug 'xolox/vim-misc'

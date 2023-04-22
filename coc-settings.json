@@ -1,19 +1,7 @@
 {
-    "codeLens.enable": true,
-    "codeLens.separator": "  -->", 
-    "languageserver": {
-        "haskell": {
-            "command": "haskell-language-server-wrapper",
-            "args": ["--lsp"],
-            "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
-            "filetypes": ["hs","haskell", "lhaskell"]
-        }
-    },
-    "clangd.arguments": [
-      "-log=verbose",
-      "-pretty"
-    ],
-    "coc.source.vimtex.filetypes": [
+   "codeLens.enable": true,
+   "codeLens.separator": "  -->", 
+   "coc.source.vimtex.filetypes": [
       "tex",
       "plaintex",
       "latex"
