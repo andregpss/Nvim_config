@@ -19,5 +19,16 @@ func! CompileGccExec()
 endfunc
 autocmd TermOpen * startinsert "Abre o terminal jah em modo de insercao
 
+lua << EOF
+--[[
+local navbuddy = require("nvim-navbuddy")
+require("lspconfig").clangd.setup{    
+        on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+}
+--]]
+EOF
+
 "Alternativa para compilar e executar em C
 "autocmd filetype c nnoremap <F9> :w <bar> exec '!gcc % -o %:r.exe' <bar> exec '!%:r.exe'<CR>

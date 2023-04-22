@@ -22,6 +22,8 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
    - Hasktags (Haskell tags)
    - Stylish haskell 
    - Haskell Language Server
+4. Markdown Readme
+   - npm install -g livedown
 4. Advanced find
    - fzf (fuzzy)
    - fd (file system)
@@ -32,9 +34,13 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
    - MuPDF (Alternate PDF viewer)
    - MuTool (PDF editing)
 
+
 # Main Shortcuts
 
-- **COC**
+- **Navbuddy**
+    - :Navbuddy - before that, go to the top of the code 
+
+- **COC** (Vimtex)
 	- K - mostra documentação da função
 	- [g - próximo comentário lint
 	- ]g - comentário anterior lint
@@ -109,9 +115,11 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- 	<space> ca (code action; aplica as sugestões de alteração no código)
 
 - **Several plug-ins (Git, Airline, Syntastic, Tabbar, Tagbar,FZV,VimProc)**
-	- Airline Tab
+	- Livedown Previews (Markdown, Readme)
+        - gm 
+    - Airline Tab
 		-	:echo g:airline_symbols - símbolos usados na linha de status
-	- :AirlineTheme <theme>			
+	- AirlineTheme <theme>			
 		- Tab, ShiftTab, \1, \2, \3			
 		- :bnext, :bprevious, :bfirst			
 		- :blast, :b10, :b <buffer-name>, :bdelete[!], :badd
