@@ -2,17 +2,23 @@
 "Para executar: <leader>gq
 setg formatprg=stylish-haskell
 
+hi DiagnosticHint guifg=#06aa74
+
 lua << EOF
 local navbuddy = require("nvim-navbuddy")
-
 require('lspconfig')['hls'].setup{
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
-}
-
-require'lspconfig'.hls.setup{
-        on_attach = function(client, bufnr)
+-- Disables Stan lint plugin, because it is too verbose
+  settings = {
+        haskell = {
+             plugin = {
+                stan= { globalOn = false }
+            }
+        }
+    },
+    on_attach = function(client, bufnr)
         navbuddy.attach(client, bufnr)
-    end
+    end,
 }
 EOF
 

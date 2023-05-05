@@ -9,15 +9,15 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 
 # Install the following external apps
 
-1. Latex 
+1. Latex (Coc - Vimtex) 
    - Latex compiler
    - SumatraPDF
-2. Grammarly
+2. Grammarly (LSPConfig)
    - Grammarly app (Premium user)
    - Grammarly language Server 
      - https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#grammarly
    - Node.js 14 (must be this version)
-3. Haskell
+3. Haskell (LSPConfig)
    - GHC Compiler
    - Hasktags (Haskell tags)
    - Stylish haskell 

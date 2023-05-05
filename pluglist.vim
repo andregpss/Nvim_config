@@ -42,6 +42,7 @@ Plug 'tpope/vim-rhubarb' 	" required by fugitive to :Gbrowse
 							" Abre o arquivo atual no github
 Plug 'neovim/nvim-lspconfig'
 Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
 
 if isdirectory('/usr/local/opt/fzf') 
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -62,7 +63,8 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 " Molokai color scheme 
 Plug 'tomasr/molokai'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'shime/vim-livedown' "Preview Markdown Readme
 
 "Following plugs are necessary for NavBuddy plugin
