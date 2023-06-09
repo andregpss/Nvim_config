@@ -1,9 +1,23 @@
 {
    "codeLens.enable": true,
    "codeLens.separator": "  -->", 
-   "coc.source.vimtex.filetypes": [
-      "tex",
-      "plaintex",
-      "latex"
-    ],
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": [ "*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml" ],
+      "filetypes": ["haskell", "lhaskell","cabal"],
+      "settings": {
+        "haskell": {
+          "checkParents": "CheckOnSave",
+          "checkProject": true,
+          "maxCompletions": 40,
+          "formattingProvider": "ormolu",
+          "plugin": {
+            "stan": { "globalOn": true }
+          }
+        }
+      }
+    }
+  }
 }

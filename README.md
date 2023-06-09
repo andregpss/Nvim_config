@@ -2,61 +2,91 @@
 Neovim config files, including configurations for Latex, Haskell, Grammarly and C/C++
 (https://dotfyle.com/andregpss)
 
-**Table Of Contents**
-- [Install the following external apps:](#install-the-following-external-apps)
-- [Main Shortcuts](#main-shortcuts)
+## **Table Of Contents**
+- [Install](#install)
+- [Languages Shortcut](#languages_shortcuts)
+- [General Shortcuts](#general_shortcuts)
 
-
-# Install the following external apps
-
-1. Latex (Coc - Vimtex) 
+## Install
+1. Latex
    - Latex compiler
    - SumatraPDF
-2. Grammarly (LSPConfig)
+   - Coc plugin (Necessary to complete citations and references)
+    1. TexLab (**Best** option)
+        - Download https://github.com/latex-lsp/texlab/releases
+        - :CocInstall coc-texlab
+    2. Vimtex (Other option)
+        - Install 'lervag/vimtex' 
+        - :CocInstall coc-vimtex
+2. Grammarly 
    - Grammarly app (Premium user)
    - Grammarly language Server 
      - https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#grammarly
    - Node.js 14 (must be this version)
-3. Haskell (LSPConfig)
+   - LSPConfig
+3. Haskell 
    - GHC Compiler
    - Hasktags (Haskell tags)
    - Stylish haskell 
    - Haskell Language Server
-4. Markdown Readme
+4. C/C++
+    - gcc compiler
+    - ALE
+5. Markdown Readme
    - npm install -g livedown
-4. Advanced find
+6. Advanced find
    - fzf (fuzzy)
    - fd (file system)
-5. Other
+7. Other
     - ctags
-6. Maybe necessary (test)
-   - Texlab (Latex LSP)
-   - MuPDF (Alternate PDF viewer)
-   - MuTool (PDF editing)
 
+## Languages Shortcuts
 
-# Main Shortcuts
-
-- **Navbuddy**
-    - :Navbuddy - before that, go to the top of the code 
-
-- **COC** (Vimtex)
-	- K - mostra documentação da função
-	- [g - próximo comentário lint
-	- ]g - comentário anterior lint
+- **COC** (Haskell,Latex (TexLab))
+	- Coc plugin is an LSP manager for Neovim that offers more advanced and customizable features. 
+    - K - mostra documentação da função
+	- **[g** - próximo comentário lint
+	- **]g** - comentário anterior lint
+	- <espaço>+a - mostra todo o diagnóstico/dicas do código 
+	- <espaço>+o - mostra a relação de funções do arquivo
 	- <leader>rn (coc-rename)
 	- <c-space> to trigger completion - Coc
 	- \f - formata código selecionado
 	- :Format - formata todo o código do arquivo
-	- <espaço>+a - mostra todo o diagnóstico/dicas do código 
-	- <espaço>+o - mostra a relação de funções do arquivo
-	- /p - aplica as correções do code lens (aquelas exibidas como texto virtual)
-	- 	OU add a fake signature like myFunction :: _, selected the _ character and then pressed \a.
-	- gd (coc-definition)	
-	- Abre a implementação da função
+	- /p - aplica as correções do code lens (aquelas exibidas como texto virtual) 
+    - gd (coc-definition)	
 	- gy (coc-type-definition) Jump to type definition(s) of current symbol by invoke
 	- gi (coc-implementation) Aparentemente não implementado. Acredito que é desnecessário devido aos dois acima.
 	- gr (coc-references)	Lista todas as referências no projeto para o termo em questão
+
+- **LSPConfig (Grammarly, Latex(?))**
+	- 	Neovim's native LSP support offers basic LSP functionality, many users prefer to use plugins like Coc to have a richer and more customizable experience.
+    - 	[d, ]d (navegate between erros and warnings)
+	- 	<space> e (mostra o menu flutuante)
+	- 	<space> ca (code action; aplica as sugestões de alteração no código)
+	- 	<space> rn (rename)
+    - 	K, gd, gi, gr, ctrl+k,<space>D,
+
+- **Haskell, Stylish Haskell, HLint**
+	- \qf - (quick fix) aplica sugestão de código do hlint em todo o código
+	- \a - lista a sugestão/action para o comando onde o cursor está posicionado. Atenção que o menu popup aparece na frente da lista. É necessário pressionar algum dos botões para cima/para baixo
+	- \ac - lista todas as dicas/actions
+	- to - Apply one hint at cursor position (?)
+	- ta - Apply all suggestions in the file (?)
+	- <leader>gq - aplicar
+
+- **ALE (C Programming**)
+	- [e, ]e (atalhos para navegar entre erros) (:lnext, :lprevious)
+	- [a, ]a (move between warnings)
+    - <ctrl>k,<ctrl>j (move between wraps)
+    - :Errors (abre janela de erros)	
+	- F9 - Compila arquivos .c
+	- F11 - Compila e executa arquivos .c
+
+## General Shortcuts
+
+- **Navbuddy**
+    - :Navbuddy - before that, go to the top of the code 
 
 - **NerdTree**
 	- <F2> ou <Leader>v ou :NERDTreeFind	 
@@ -76,43 +106,10 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- :<inicio>,<fim>Commentary - commenta todas as linhas entre <inicio> e <fim>
 	- :g/TODO/Commentary - move para o próximo TODO - VIM-COMMENTARY
 
-- **Haskell Stylish Haskell, HLint**
-	- \qf - (quick fix) aplica sugestão de código do hlint em todo o código
-	- \a - lista a sugestão/action para o comando onde o cursor está posicionado. Atenção que o menu popup aparece na frente da lista. É necessário pressionar algum dos botões para cima/para baixo
-	- \ac - lista todas as dicas/actions
-	- to - Apply one hint at cursor position (?)
-	- ta - Apply all suggestions in the file (?)
-	- :CocFix - idem a ‘ta’ (?)
-	- <leader>gq - aplicar
-
-- **C Programming**
-	- [e, ]e (atalhos para navegar entre erros) (:lnext, :lprevious)
-	- :Errors (abre janela de erros)	
-	- F9 - Compila arquivos .c
-	- F11 - Compila e executa arquivos .c
-
-- **VimTex**
-	- Compile and view PDF
-		- \lt - tags do latex	-
-		- \ll - compile latex
-		- \lv - view pdf
-		- \le - view latex erros
-		- \lc - clear temporary files
-	- Move
-		- Move between section boundaries with [[, [], ][, and ]]
-		- Move between environment boundaries with [m, [M, ]m, and ]M
-		- Move between comment boundaries with [* and ]*
-		- Move between matching delimiters with %
-	- vim-surround
-		- yssc <digitar comando> (envolve a linha posicionada com o comando). Ex: yssc textit
-		- ysse <digitar environment> (idem para o environment). Ex: ysse tabular
-		- ysee ou ysec (mesma coisa para a palavra posicionada)
-
-- **Grammarly (LSPConfig)**
-	- 	[d, ]d (navega entre os erros)
-	- 	<space> e (mostra o menu flutuante)
-	- 	<space> rn (rename)
-	- 	<space> ca (code action; aplica as sugestões de alteração no código)
+- vim-surround
+	- yssc <digitar comando> (envolve a linha posicionada com o comando). Ex: yssc textit
+	- ysse <digitar environment> (idem para o environment). Ex: ysse tabular
+	- ysee ou ysec (mesma coisa para a palavra posicionada)
 
 - **Several plug-ins (Git, Airline, Syntastic, Tabbar, Tagbar,FZV,VimProc)**
 	- Livedown Previews (Markdown, Readme)
@@ -123,7 +120,7 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 		- Tab, ShiftTab, \1, \2, \3			
 		- :bnext, :bprevious, :bfirst			
 		- :blast, :b10, :b <buffer-name>, :bdelete[!], :badd
-	- Syntastic (Linguagem c)
+	- Syntastic (Linguagem c?)
 		- :lnext, :lprevious (navega entre erros) - 	Syntastic
 		- [e, ]e (atalhos para navegar entre erros)
 		- :Errors (abre janela de erros)			Syntastic
@@ -136,4 +133,18 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- Github
 		- :G - git status						- 
 		- :Gcommit, :Gpush, :Gpull				
-		- :Git	
+		- :Git
+
+- **VimTex** (Unused)
+	- Compile and view PDF
+		- \lt - tags do latex	-
+		- \ll - compile latex
+		- \lv - view pdf
+		- \le - view latex erros
+		- \lc - clear temporary files
+	- Move
+		- Move between section boundaries with [[, [], ][, and ]]
+		- Move between environment boundaries with [m, [M, ]m, and ]M
+		- Move between comment boundaries with [* and ]*
+		- Move between matching delimiters with %
+- [Up](#install)

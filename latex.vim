@@ -1,36 +1,5 @@
 "VEJA O HELP NO FIM DO ARQUIVO
 
-" Vimtex config
-let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_compiler_latexmk = {
-        \ 'build_dir' : 'temp',
-        \ 'callback' : 1,
-        \ 'continuous' : 1,
-        \ 'executable' : 'latexmk',
-        \ 'hooks' : [],		
-        \ 'options' : [
-        \   '-verbose',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
-let g:vimtex_view_general_viewer = 'SumatraPDF-3.2-64.exe'
-
-autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
-
-let g:tagbar_type_tex = {
-    \ 'ctagstype' : 'latex',
-    \ 'kinds'     : [
-        \ 's:sections',
-        \ 'g:graphics:0:0',
-        \ 'l:labels',
-        \ 'r:refs:1:0',
-        \ 'p:pagerefs:1:0'
-    \ ],
-    \ 'sort'    : 0,
-\ }
-
 "Uso do vim-surround; inclui comando ys?c e ys?e
 augroup latexSurround 
   autocmd!   
@@ -46,15 +15,88 @@ endfunction
 "NECESSARIO incluir arquivos iniciais dos projetos
 let g:gutentags_project_root = ['main.tex']
 
-"Para destacar os erros de compilação
-let g:vimtex_quickfix_mode = 0
-"let g:vimtex_syntax_conceal = 0
+let g:tagbar_type_tex = {
+    \ 'ctagstype' : 'latex',
+    \ 'kinds'     : [
+        \ 's:sections',
+        \ 'g:graphics:0:0',
+        \ 'l:labels',
+        \ 'r:refs:1:0',
+        \ 'p:pagerefs:1:0'
+    \ ],
+    \ 'sort'    : 0,
+\ }
+let g:tagbar_type_bib = {
+    \ 'ctagstype' : 'bib',
+    \ 'kinds'     : [
+        \ 'a:Articles',
+        \ 'b:Books',
+        \ 'L:Booklets',
+        \ 'c:Conferences',
+        \ 'B:Inbook',
+        \ 'C:Incollection',
+        \ 'P:Inproceedings',
+        \ 'm:Manuals',
+        \ 'T:Masterstheses',
+        \ 'M:Misc',
+        \ 't:Phdtheses',
+        \ 'p:Proceedings',
+        \ 'r:Techreports',
+        \ 'u:Unpublished',
+    \ ]
+\ }
+" Opção 1 de plugin para Latex 
+"---------- TEXLAB -------------
+"   Ver aquivo lspconfig.vim 
 
-" Define error highlight group
-"highlight link VimtexErrorLine Error
-highlight VimtexWarning guifg=yellow
-highlight VimtexError guifg=green
-highlight VimtexErrorLine guifg=violet
+" Opção 2
+" --------- VIMTEX ---------------
+"  1) Install plugins 'Coc' and 'Vimtex'
+"  2) Retirar os comentários desse bloco: '<>,<>:norm x
+"  3) On vim, execute ':CocInstall coc-vimtex'
+
+"filetype plugin indent on
+"syntax enable
+"let maplocalleader = ","
+"
+"let g:vimtex_compiler_progname = 'nvr'
+"let g:vimtex_compiler_latexmk = {
+""        \ 'build_dir' : 'temp',
+""        \ 'callback' : 1,
+""        \ 'continuous' : 1,
+""        \ 'executable' : 'latexmk',
+""        \ 'hooks' : [],		
+""        \ 'options' : [
+""        \   '-verbose',
+""        \   '-file-line-error',
+""        \   '-synctex=1',
+""        \   '-interaction=nonstopmode',
+""        \ ],
+""        \}
+"let g:vimtex_view_general_viewer = 'SumatraPDF-3.2-64.exe'
+"
+"autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
+"
+""Para destacar os erros de compilação
+"let g:vimtex_quickfix_mode = 0
+""let g:vimtex_syntax_conceal = 0
+"let g:vimtex_view_general_options
+""    \ = '-reuse-instance -forward-search @tex @line @pdf'
+"
+""TESTAR a opção acima com o valor: '--unique file:@pdf\#src:@line@tex'
+"
+"" Define error highlight group
+""highlight link VimtexErrorLine Error
+"highlight VimtexWarning guifg=yellow
+"highlight VimtexError guifg=green
+"highlight VimtexErrorLine guifg=violet
+""------------------ VIMTEX END -------------
+
+
+
+
+" The following Vimtex commands were not used
+
 " Set underline style for error highlighting
 "highlight Error cterm=underline gui=underline
 

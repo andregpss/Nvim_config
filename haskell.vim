@@ -4,24 +4,6 @@ setg formatprg=stylish-haskell
 
 hi DiagnosticHint guifg=#06aa74
 
-lua << EOF
-local navbuddy = require("nvim-navbuddy")
-require('lspconfig')['hls'].setup{
-  filetypes = { 'haskell', 'lhaskell', 'cabal' },
--- Disables Stan lint plugin, because it is too verbose
-  settings = {
-        haskell = {
-             plugin = {
-                stan= { globalOn = false }
-            }
-        }
-    },
-    on_attach = function(client, bufnr)
-        navbuddy.attach(client, bufnr)
-    end,
-}
-EOF
-
 "Para reconhecer tags em codigo Haskell
 let g:tagbar_type_haskell = {
     \ 'ctagsbin'  : 'hasktags',
@@ -55,22 +37,4 @@ let g:tagbar_type_haskell = {
     \ }
 \ }
 
-let g:tagbar_type_bib = {
-    \ 'ctagstype' : 'bib',
-    \ 'kinds'     : [
-        \ 'a:Articles',
-        \ 'b:Books',
-        \ 'L:Booklets',
-        \ 'c:Conferences',
-        \ 'B:Inbook',
-        \ 'C:Incollection',
-        \ 'P:Inproceedings',
-        \ 'm:Manuals',
-        \ 'T:Masterstheses',
-        \ 'M:Misc',
-        \ 't:Phdtheses',
-        \ 'p:Proceedings',
-        \ 'r:Techreports',
-        \ 'u:Unpublished',
-    \ ]
-\ }
+

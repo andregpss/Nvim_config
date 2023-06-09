@@ -1,4 +1,15 @@
+"Comandos ate linha 8 estavam junto com a configuração do Coc. Não sei se é
+"dependente do Coc.
+set hidden  " if hidden is not set, TextEdit might fail.
+set nobackup " Some servers have issues with backup files, see #649
+set nowritebackup
+set cmdheight=2 " Better display for messages
+set updatetime=300 " You will have bad experience for diagnostic messages when it's default 4000.
+set shortmess+=c " don't give |ins-completion-menu| messages.
+set signcolumn=yes " always show signcolumns
+
 silent! colorscheme molokai
+"set encoding = utf8
 set laststatus                         =2              " Status bar
 set nu!                                                " Shows line number column
 set termguicolors

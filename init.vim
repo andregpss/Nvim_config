@@ -7,16 +7,16 @@ let g:polyglot_disabled = ['latex','tex','haskell','c/c++']
 if has("win64") || has("win32") || has("win16")
 	source ~/AppData/Local/nvim/pluglist.vim
 	source ~/AppData/Local/nvim/config.vim
+    source ~/AppData/Local/nvim/lspconfig.vim
 	source ~/AppData/Local/nvim/coc-config.vim
+    source ~/AppData/Local/nvim/ale.vim
 	source ~/AppData/Local/nvim/nerdtree.vim
 	source ~/AppData/Local/nvim/airline.vim
+	source ~/AppData/Local/nvim/mappings.vim
 	source ~/AppData/Local/nvim/searcher.vim
+    source ~/AppData/Local/nvim/grammarly.vim
 	source ~/AppData/Local/nvim/c-language.vim
 	source ~/AppData/Local/nvim/haskell.vim
-    source ~/AppData/Local/nvim/grammarly.vim
-	source ~/AppData/Local/nvim/mappings.vim
-    source ~/AppData/Local/nvim/ale.vim
-    source ~/AppData/Local/nvim/lspconfig.vim
 	source ~/AppData/Local/nvim/latex.vim
 else
 	source ~/.config/nvim/pluglist.vim

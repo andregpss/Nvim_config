@@ -14,35 +14,39 @@ if !filereadable(vimplug_exists)
 endif
 
 call plug#begin()
-"Plug-ins minimos
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'nbouscal/vim-stylish-haskell'
-Plug 'preservim/nerdtree'	"Outra implementação: Plug 'scrooloose/nerdtree'
-Plug 'PhilRunninger/nerdtree-visual-selection' "Testar
-"-------------------Latex
-Plug 'lervag/vimtex' 
-    let g:tex_flavor='latex'
 
-Plug 'ludovicchabant/vim-gutentags'
-"Plug 'tpope/vim-commentary' 	"Atalhos para comentario
-Plug 'tpope/vim-fugitive'		"GIT atalhos
-Plug 'vim-airline/vim-airline'	"Barra de status
-Plug 'vim-airline/vim-airline-themes' "Esquema de cores para barra de status
-Plug 'airblade/vim-gitgutter' 	"indica com ~ as linhas alteradas deste o ultimo push
-Plug 'vim-scripts/grep.vim'		"usa comando grep (do linux) dentro do vim
-Plug 'Raimondi/delimitMate'		"Fecha aspas, parenteses, etc.
-Plug 'majutsushi/tagbar'		"Mostra estrutura do código; Haskell nao é suportado 
-								"NECESSARIO Instalar Exuberant Ctags?
-								"NECESSARIO criar ~/.ctag para suportar .bib
-Plug 'MarcWeber/hasktags'		"Reconhece tags do haskell
-			"NECESSARIO compilar com Cabal e copiar executavel para dir do nvim.exe
-Plug 'Yggdroot/indentLine'		"display the indention levels with thin vertical lines
-Plug 'sheerun/vim-polyglot'	"Pacote para reconhecimento de diversas linguagens
-Plug 'tpope/vim-rhubarb' 	" required by fugitive to :Gbrowse
-							" Abre o arquivo atual no github
+" Languages resoureces, including LSP and CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Add extra features to LSPs 
 Plug 'neovim/nvim-lspconfig'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+Plug 'dense-analysis/ale'                       " Used for GCC compiling
+Plug 'sheerun/vim-polyglot'                     " A collection of language packs for Vim (Syntax highlighting, indentation, matching rules and mappings).
+Plug 'shime/vim-livedown'                       " Preview Markdown Readme
+" Plug 'vim-syntastic/syntastic'
+
+"Haskell
+Plug 'MarcWeber/hasktags'           " Reconhece tags do haskell
+			                        " NECESSARIO compilar com Cabal e copiar executavel para dir do nvim.exe
+Plug 'nbouscal/vim-stylish-haskell'
+
+" General features
+Plug 'preservim/nerdtree'                      " Alternative implementation: Plug 'scrooloose/nerdtree'
+Plug 'PhilRunninger/nerdtree-visual-selection' " NerdTree key mappings
+Plug 'vim-airline/vim-airline'                 " Status bar
+Plug 'vim-airline/vim-airline-themes'          " Colour schemes for status bar 
+Plug 'tomasr/molokai'                          " Molokai color scheme
+Plug 'vim-scripts/grep.vim'                    " Use grep command (linux) into vim
+Plug 'Yggdroot/indentLine'                     " Display the indention levels with thin vertical lines
+Plug 'godlygeek/tabular'                       " Align text using :Tab
+Plug 'Raimondi/delimitMate'                    " Closes parentheses, brackets, etc.
+Plug 'tpope/vim-surround'                      " surroundings with parentheses, brackets, quotes, XML tags, and more. Commands: cs and ds
+Plug 'ludovicchabant/vim-gutentags'            " (re)generate tag files as you work 
+Plug 'majutsushi/tagbar'                       " Mostra estrutura do código; Haskell nao é suportado
+
+" Git features
+Plug 'airblade/vim-gitgutter' " indica com ~ as linhas alteradas deste o ultimo push
+Plug 'tpope/vim-rhubarb'      " required by fugitive to :Gbrowse
+							  " Abre o arquivo atual no github
+Plug 'tpope/vim-fugitive'     " GIT atalhos
 
 if isdirectory('/usr/local/opt/fzf') 
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -50,45 +54,32 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
+let g:fzf_preview_command = '' " Disable commands on popup window. That commands conflicts with LSP commands.
 
-"NECESSARIO construir dll com Mingw C:\MinGW\bin OU baixar versão pré-compilada.
-"NECESSARIO Copiar algumas pastas para o dir 'runtime' do neovim
-"Executa comandos do terminal dentro do vim. Ex: :VimProcBang ls -l *.cabal
-"Achei desnecessario, pois aparentemente eh equivalente a ':terminal'
-let g:make = 'gmake'
+"The Following command is necessary to install Vimproc (i think)
+"make is utility for building and maintaining groups of programs.
+let g:make = 'make'
 if exists('make')
         let g:make = 'make'
 endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
+Plug 'Shougo/vimproc.vim', {'do': g:make}      " asynchronous execution library. Maybe a prerequisit for other plugins.
 
-" Molokai color scheme 
-Plug 'tomasr/molokai'
-"Plug 'vim-syntastic/syntastic'
-Plug 'dense-analysis/ale'
-Plug 'shime/vim-livedown' "Preview Markdown Readme
+"O devicons must be the last plugin; otherwise, it is not shown on status.
+"Verify if this is really correct.
+Plug 'ryanoasis/vim-devicons'
 
 "Following plugs are necessary for NavBuddy plugin
-Plug 'SmiteshP/nvim-navic'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'numToStr/Comment.nvim'        " Optional
-Plug 'nvim-telescope/telescope.nvim' " Optional
-Plug 'SmiteshP/nvim-navbuddy'
+"Plug 'SmiteshP/nvim-navic'
+"Plug 'MunifTanjim/nui.nvim'
+"Plug 'numToStr/Comment.nvim'        " Optional
+"Plug 'nvim-telescope/telescope.nvim' " Optional
+"Plug 'SmiteshP/nvim-navbuddy'
 
-"O devicons deve ser o ultimo; caso contrario, nao eh exibido no status
-Plug 'ryanoasis/vim-devicons'
-"Plug 'wbthomason/packer.nvim'
-"Plug 'w0rp/ale' 				"Incompativel com o HIE Haskell Engine
-"Plug 'avelino/vim-bootstrap-updater' "Acredito que atualiza o vimrc
-"Plug 'jistr/vim-nerdtree-tabs' "Now togheter with nerd trees
-"Plug 'vim-scripts/CSApprox'		"Adapta Colorshemes para uso em terminal
-"Plug 'neovimhaskell/haskell-vim'
+"Plug 'lervag/vimtex' 
+"    let g:tex_flavor='latex'
+"Plug 'tpope/vim-commentary' 	"Atalhos para comentario
 
-"Plug-Ins adicionais recomendados pelo vim-bootstrap
-" FZF is a bundle of fzf-based commands and mappings
-" fzf is a general-purpose command-line fuzzy finder.
-" NECESSARY On Windows to download executable
-""Para salvar seções; acho desnecessario, por enquanto.
-"" Vim-Session
+" Vim-Session
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
 
