@@ -2,9 +2,8 @@ map ]e :lnext<CR>
 map [e :lprevious<CR>
 
 "Elimina o atalho para a tecla Tab no modo de inserção.
-"Até então, havia um atalho definido: coc#refresh()
-"Local onde o atalho é definido: ~/AppData/Local/nvim-data/plugged/coc.nvim/autoload/coc/ui.vim
-inoremap <Tab> <Tab>
+"inoremap <Tab> <Tab>
+
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 "" Clean search (highlight)
@@ -13,19 +12,7 @@ nnoremap <silent> <leader><space> :noh<cr>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
-
-"Tabs (Airline tab)
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <Tab>   :bnext<CR>
-nnoremap <leader><Tab>   :bdelete<CR>
-"Shift+t
-nnoremap <silent> <S-t> :tabnew<CR>
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-nmap <leader>1 :bfirst<CR>
-nmap <leader>2 :bfirst<CR>:bn<CR>
-nmap <leader>3 :bfirst<CR>:2bn<CR>
-nmap <leader>4 :bfirst<CR>:3bn<CR>
+let g:tagbar_autoclose = 1
 
 "" Switching windows. Ex: the first command maps Ctrl+J to execute Ctrl-w+j,
 "  i.e.,  move the cursor to the window below the current one.

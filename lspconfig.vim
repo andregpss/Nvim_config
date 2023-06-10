@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 }) 
 
-require('lspconfig').grammarly.setup{filetypes={"tex","text","markdown","vim"}}
+require('lspconfig').grammarly.setup{filetypes={"tex","text","markdown"}}
 
 -- This command is necessary to enable ':TexlabBuild' command
 require'lspconfig'.texlab.setup{
