@@ -41,6 +41,7 @@ Plug 'Raimondi/delimitMate'                    " Closes parentheses, brackets, e
 Plug 'tpope/vim-surround'                      " surroundings with parentheses, brackets, quotes, XML tags, and more. Commands: cs and ds
 Plug 'ludovicchabant/vim-gutentags'            " (re)generate tag files as you work 
 Plug 'majutsushi/tagbar'                       " Mostra estrutura do código; Haskell nao é suportado
+Plug 'szw/vim-maximizer'                       " Maximizes and restores the current window
 
 " Git features
 Plug 'airblade/vim-gitgutter' " indica com ~ as linhas alteradas deste o ultimo push
@@ -69,11 +70,11 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}      " asynchronous execution library.
 Plug 'ryanoasis/vim-devicons'
 
 "Following plugs are necessary for NavBuddy plugin
-"Plug 'SmiteshP/nvim-navic'
-"Plug 'MunifTanjim/nui.nvim'
-"Plug 'numToStr/Comment.nvim'        " Optional
-"Plug 'nvim-telescope/telescope.nvim' " Optional
-"Plug 'SmiteshP/nvim-navbuddy'
+Plug 'SmiteshP/nvim-navic'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'numToStr/Comment.nvim'        " Optional
+Plug 'nvim-telescope/telescope.nvim' " Optional
+Plug 'SmiteshP/nvim-navbuddy'
 
 "Plug 'lervag/vimtex' 
 "    let g:tex_flavor='latex'

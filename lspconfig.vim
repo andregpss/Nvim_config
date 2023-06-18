@@ -1,5 +1,6 @@
 lua << EOF
--- local navbuddy = require("nvim-navbuddy")
+local navbuddy = require("nvim-navbuddy")
+
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -54,16 +55,20 @@ settings = {
             }
             },
        }
-    }
+    },
+    on_attach = function(client, bufnr)
+         navbuddy.attach(client, bufnr)
+    end
 }
--- require('lspconfig')['hls'].setup{
---    filetypes = { 'haskell', 'lhaskell', 'cabal' },
---    on_attach = function(client, bufnr)
---         navbuddy.attach(client, bufnr)
---     end,
---     settings = {haskell={plugin={stan={globalOn=false}}}}
--- }
--- 
+require('lspconfig')['hls'].setup{
+   filetypes = { 'haskell', 'lhaskell', 'cabal' },
+   on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+   --, settings = {haskell={plugin={stan={globalOn=false}}}}
+
+}
+
 -- require('lspconfig')['hls'].setup{
 --   filetypes = { 'haskell', 'lhaskell', 'cabal' },
 -- -- Disables Stan lint plugin, because it is too verbose

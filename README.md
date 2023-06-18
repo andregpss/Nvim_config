@@ -6,6 +6,7 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 - [Install](#install)
 - [Languages Shortcut](#languages-shortcuts)
 - [General Shortcuts](#general-shortcuts)
+- [Troubleshooting](#troubleshooting)
 
 ## Install
 1. Latex
@@ -32,7 +33,7 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 4. C/C++ (ALE)
     - gcc compiler
     - ALE
-5. Markdown Readme
+5. Markdown Readme live view
    - npm install -g livedown
 6. Advanced find
    - fzf (fuzzy)
@@ -87,7 +88,8 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 ## General Shortcuts
 
 - **Navbuddy**
-    - :Navbuddy - before that, go to the top of the code 
+    - :Navbuddy - theres an initial error, but it works when you move to the right ('l' key) 
+    - j,k,h,l - move down, up, left, right
 
 - **NerdTree**
 	- <F2> ou <Leader>v ou :NERDTreeFind	 
@@ -133,17 +135,20 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
  
 [Up](#install)
 
-- **VimTex** (Unused)
-	- Compile and view PDF
-		- \lt - tags do latex	-
-		- \ll - compile latex
-		- \lv - view pdf
-		- \le - view latex erros
-		- \lc - clear temporary files
-	- Move
-		- Move between section boundaries with [[, [], ][, and ]]
-		- Move between environment boundaries with [m, [M, ]m, and ]M
-		- Move between comment boundaries with [* and ]*
-		- Move between matching delimiters with %
+## Troubleshooting
+- Coc
+    - Auto-complete popup menu does not show LSP suggestions: 
+        - After modifying the code, the options may take some time to load (Reference: https://github.com/neoclide/coc.nvim/wiki/F.A.Q ).
+- HLS (Haskell)
+    - Plugin doesn't work:
+        - Create a `hie.yaml` file in the project's root folder.
+        - There might be an issue with the .cabal file or the existing hie.yaml.
+        - Run 'haskell-language-server' or 'haskell-language-server-wrapper' in the project's root folder and check for errors.
+        - Open a code file in the interpreter and see the errors using the following command: cabal repl <file name>
+    - The 'hie.yaml' file seems to be incorrect.
+        - Download a program that generates this file automatically from: https://github.com/Avi-D-coder/implicit-hie
+    - It appears that the evaluated '.cabal' or '.stack' file is not the one in the project's root folder.
+        - Check if there are any other files of these types in subfolders of the project; if so, remove those files from subfolders or from the root of the project.
+- Latex
 
 [Up](#install)

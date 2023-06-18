@@ -1,6 +1,7 @@
 map ]e :lnext<CR>
 map [e :lprevious<CR>
 
+nnoremap <leader>b :lua require('nvim-navbuddy').open() <CR>
 "Elimina o atalho para a tecla Tab no modo de inserção.
 "inoremap <Tab> <Tab>
 
@@ -24,6 +25,9 @@ noremap <C-h> <C-w>h
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
+
+" maximize current split or return to previous
+noremap <C-w>m :MaximizerToggle<CR>
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
