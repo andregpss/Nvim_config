@@ -39,9 +39,10 @@ Plug 'Yggdroot/indentLine'                     " Display the indention levels wi
 Plug 'godlygeek/tabular'                       " Align text using :Tab
 Plug 'Raimondi/delimitMate'                    " Closes parentheses, brackets, etc.
 Plug 'tpope/vim-surround'                      " surroundings with parentheses, brackets, quotes, XML tags, and more. Commands: cs and ds
-Plug 'ludovicchabant/vim-gutentags'            " (re)generate tag files as you work 
-Plug 'majutsushi/tagbar'                       " Mostra estrutura do código; Haskell nao é suportado
+Plug 'ludovicchabant/vim-gutentags'            " (re)generate in background tag files as you work. When not using Gustentags, you must generate the tags manually.
+Plug 'majutsushi/tagbar'                       " Mostra estrutura do código em uma barra vertical (atalho F8); Haskell nao é suportado
 Plug 'szw/vim-maximizer'                       " Maximizes and restores the current window
+Plug 'tpope/vim-characterize' " Shows additional information about a character when `ga` is pressed
 
 " Git features
 Plug 'airblade/vim-gitgutter' " indica com ~ as linhas alteradas deste o ultimo push

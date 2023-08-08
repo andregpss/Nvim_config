@@ -7,6 +7,7 @@
 
 au BufEnter *.c set makeprg=gcc\ -g\ %\ -o\ %< 
 au filetype c nnoremap <F9> :call CompileGcc()<CR>
+
 func! CompileGcc()
     exec "w" 
     make			

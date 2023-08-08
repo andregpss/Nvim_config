@@ -35,7 +35,8 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
    - fzf (fuzzy)
    - fd (file system)
 7. Other
-    - ctags
+    - Exuberant ctags (https://ctags.sourceforge.net/)
+        - Not confuse Exuberant CTags with original CTags (that does not support any language nativelly)
 
 ## Languages Shortcuts
 
@@ -85,12 +86,14 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 ## General Shortcuts
 
 - **Navbuddy**
-    - :Navbuddy - theres an initial error, but it works when you move to the right ('l' key) 
+    - \b or :Navbuddy - theres an initial error, but it works when you move to the right ('l' key) 
     - j,k,h,l - move down, up, left, right
+    - Some fonts does not have all the icons used by Navbuddy. One of the fonts that have all the icons is Agave Nerd Font.
+    - There is an error when Navbuddy is called and the cursor is on the first line of a Haskell file.
 
 - **NerdTree**
-	- ``<F2>`` ou ``<Leader>v `` ou ``:NERDTreeFind ``	 
-	- ``<F3>`` ou ``<Leader>n `` ou ``:NERDTreeToggle  ``
+	- ``<F2>`` or ``<Leader>v `` or ``:NERDTreeFind ``	 
+	- ``<F3>`` or ``<Leader>n `` or ``:NERDTreeToggle  ``
 	- hjkl - navega similar às teclas de navegação
 	- r - atualiza o diretório corrente
 	- m - mostra o menu
@@ -99,12 +102,6 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- X - fecha todos os diretórios abertos
 	- e - abre o diretório corrente na janela principal
 	- p - move para o diretório pai	
-
-- **Comments**
-	- gcc - comenta linha				- VIM-COMMENTARY
-	- gc - comenta seleção				- VIM-COMMENTARY
-	- ``:<inicio>,<fim>Commentary `` - commenta todas as linhas entre ``<inicio>`` e ``<fim>``
-	- :g/TODO/Commentary - move para o próximo TODO - VIM-COMMENTARY
 
 - **Surround**
 	- `yssc <digitar comando>` (envolve a linha posicionada com o comando). Ex: yssc textit

@@ -110,6 +110,18 @@ vimrc	.\config.vim	/^augroup vimrc-remember-cursor-position$/;"	a
 vimrc	.\config.vim	/^augroup vimrc-wrapping$/;"	a
 setupWrapping	.\config.vim	/^  function s:setupWrapping()$/;"	f
 vimrc	.\config.vim	/^augroup vimrc-make-cmake$/;"	a
+<RightMouse>	.\ginit.vim	/^nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>$/;"	m
+<RightMouse>	.\ginit.vim	/^inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>$/;"	m
+s:fontsize	.\ginit.vim	/^let s:fontsize = 13$/;"	v
+AdjustFontSize	.\ginit.vim	/^function! AdjustFontSize(amount)$/;"	f
+<C-ScrollWheelUp>	.\ginit.vim	/^noremap <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>$/;"	m
+<C-ScrollWheelDown>	.\ginit.vim	/^noremap <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>$/;"	m
+<C-ScrollWheelUp>	.\ginit.vim	/^inoremap <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a$/;"	m
+<C-ScrollWheelDown>	.\ginit.vim	/^inoremap <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a$/;"	m
+<kPlus>	.\ginit.vim	/^noremap <kPlus> :call AdjustFontSize(1)<CR>$/;"	m
+<kMinus>	.\ginit.vim	/^noremap <kMinus> :call AdjustFontSize(-1)<CR>$/;"	m
+<C-kPlus>	.\ginit.vim	/^inoremap <C-kPlus> <Esc>:call AdjustFontSize(1)<CR>a$/;"	m
+<C-kMinus>	.\ginit.vim	/^inoremap <C-kMinus> <Esc>:call AdjustFontSize(-1)<CR>a$/;"	m
 g:tagbar_type_haskell	.\haskell.vim	/^let g:tagbar_type_haskell = {$/;"	v
 g:polyglot_disabled	.\init.vim	/^let g:polyglot_disabled = ['latex','tex','haskell','c\/c++']$/;"	v
 latexSurround	.\latex.vim	/^augroup latexSurround $/;"	a
@@ -125,6 +137,12 @@ g:tagbar_type_bib	.\latex.vim	/^let g:tagbar_type_bib = {$/;"	v
 <F8>	.\mappings.vim	/^nmap <F8> :TagbarToggle<CR>$/;"	m
 g:tagbar_autofocus	.\mappings.vim	/^let g:tagbar_autofocus = 1$/;"	v
 g:tagbar_autoclose	.\mappings.vim	/^let g:tagbar_autoclose = 1$/;"	v
+<c-m>	.\mappings.vim	/^nnoremap <c-m> :m .+1<CR>==$/;"	m
+<c-n>	.\mappings.vim	/^nnoremap <c-n> :m .-2<CR>==$/;"	m
+<c-m>	.\mappings.vim	/^inoremap <c-m> <Esc>:m .+1<CR>==gi$/;"	m
+<c-n>	.\mappings.vim	/^inoremap <c-n> <Esc>:m .-2<CR>==gi$/;"	m
+<c-m>	.\mappings.vim	/^vnoremap <c-m> :m '>+1<CR>gv=gv$/;"	m
+<c-n>	.\mappings.vim	/^vnoremap <c-n> :m '<-2<CR>gv=gv$/;"	m
 <C-j>	.\mappings.vim	/^noremap <C-j> <C-w>j$/;"	m
 <C-k>	.\mappings.vim	/^noremap <C-k> <C-w>k$/;"	m
 <C-l>	.\mappings.vim	/^noremap <C-l> <C-w>l$/;"	m
@@ -17623,15 +17641,4 @@ linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = 
 linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['webmention']$/;"	v
 linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['search']$/;"	v
 linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['sitemap']$/;"	v
-linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['amphtml']$/;"	v
-linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['apple-touch-icon', 'apple-touch-icon-precomposed', 'apple-touch-startup-image']$/;"	v
-linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['chrome-webstore-item']$/;"	v
-linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['hub']$/;"	v
-linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes + ['pgpkey']$/;"	v
-abutton_dec	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let abutton_dec = 'details\\\\|embed\\\\|iframe\\\\|keygen\\\\|label\\\\|menu\\\\|select\\\\|textarea'$/;"	v
-crossorigin	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let crossorigin = ['anonymous', 'use-credentials']$/;"	v
-referrerpolicy	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let referrerpolicy = ['no-referrer', 'no-referrer-when-downgrade', 'same-origin', 'origin', 'strict-origin', 'origin-when-cross-origin', 'strict-origin-when-cross-origin', 'unsafe-url']$/;"	v
-g:xmldata_html5	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let g:xmldata_html5 = {$/;"	v
-g:xmldata_xsd	.\plugged\vim-polyglot\autoload\xml\xsd.vim	/^let g:xmldata_xsd = {$/;"	v
-s:syng_multiline	.\plugged\vim-polyglot\autoload\yats.vim	/^let s:syng_multiline = 'comment\\c'$/;"	v
-s:syng_li
+linkreltypes	.\plugged\vim-polyglot\autoload\xml\html5.vim	/^let linkreltypes = linkreltypes 

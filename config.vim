@@ -9,7 +9,7 @@ set shortmess+=c " don't give |ins-completion-menu| messages.
 set signcolumn=yes " always show signcolumns
 set splitbelow
 set splitright 
-
+set cuc " Column highligh
 silent! colorscheme molokai
 "set encoding = utf8
 set laststatus                         =2              " Status bar

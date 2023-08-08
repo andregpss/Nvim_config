@@ -15,7 +15,15 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 
-"" Switching windows. Ex: the first command maps Ctrl+J to execute Ctrl-w+j,
+"Moves the current linhe down or up
+nnoremap <c-m> :m .+1<CR>==
+nnoremap <c-n> :m .-2<CR>==
+inoremap <c-m> <Esc>:m .+1<CR>==gi
+inoremap <c-n> <Esc>:m .-2<CR>==gi
+vnoremap <c-m> :m '>+1<CR>gv=gv
+vnoremap <c-n> :m '<-2<CR>gv=gv
+
+"" Switching windows. Ex: the first command maps Ctrl+j to execute Ctrl-w+j,
 "  i.e.,  move the cursor to the window below the current one.
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
@@ -28,6 +36,7 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 " maximize current split or return to previous
 noremap <C-w>m :MaximizerToggle<CR>
+
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
