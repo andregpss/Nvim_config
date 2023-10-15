@@ -5,11 +5,11 @@
 "Show current fonts `:set guifont=*`
 " Enable Mouse
 set mouse=a
-
 " Set Editor Font
 if exists(':GuiFont')
     " Use GuiFont! to ignore font errors
-    GuiFont Agave Nerd Font:h14
+    GuiFont! Agave Nerd Font:h14
+    "GuiFont Droid Sans Mono for Powerline:h14
 endif
 
 " Disable GUI Tabline
@@ -52,3 +52,4 @@ noremap <kMinus> :call AdjustFontSize(-1)<CR>
 " In insert mode, pressing ctrl + numpad's+ increases the font
 inoremap <C-kPlus> <Esc>:call AdjustFontSize(1)<CR>a
 inoremap <C-kMinus> <Esc>:call AdjustFontSize(-1)<CR>a
+
