@@ -11,40 +11,12 @@ function! s:latexSurround()
   let b:surround_{char2nr("c")} = "\\\1command: \1{\r}"
 endfunction
 
-"NECESSARIO executar comando ':helptags .' na primeira vez para criar tags
-"NECESSARIO incluir arquivos iniciais dos projetos
-let g:gutentags_project_root = ['main.tex']
+"let g:tagbar_type_bib = { 'ctagstype' : 'bibtex'}
+"
+"Faz com que nenhuma tag (itálico, negrito) do Latex seja ocultada.
+"let g:tex_conceal = ''
+"let g:vimtex_syntax_conceal = {}
 
-let g:tagbar_type_tex = {
-    \ 'ctagstype' : 'latex',
-    \ 'kinds'     : [
-        \ 's:sections',
-        \ 'g:graphics:0:0',
-        \ 'l:labels',
-        \ 'r:refs:1:0',
-        \ 'p:pagerefs:1:0'
-    \ ],
-    \ 'sort'    : 0,
-\ }
-let g:tagbar_type_bib = {
-    \ 'ctagstype' : 'bib',
-    \ 'kinds'     : [
-        \ 'a:Articles',
-        \ 'b:Books',
-        \ 'L:Booklets',
-        \ 'c:Conferences',
-        \ 'B:Inbook',
-        \ 'C:Incollection',
-        \ 'P:Inproceedings',
-        \ 'm:Manuals',
-        \ 'T:Masterstheses',
-        \ 'M:Misc',
-        \ 't:Phdtheses',
-        \ 'p:Proceedings',
-        \ 'r:Techreports',
-        \ 'u:Unpublished',
-    \ ]
-\ }
 " Opção 1 de plugin para Latex 
 "---------- TEXLAB -------------
 "   Ver aquivo lspconfig.vim 
@@ -52,8 +24,8 @@ let g:tagbar_type_bib = {
 " Opção 2
 " --------- VIMTEX ---------------
 "  1) Install plugins 'Coc' and 'Vimtex'
-"  2) Retirar os comentários desse bloco: '<>,<>:norm x
 "  3) On vim, execute ':CocInstall coc-vimtex'
+"  2) Retirar os comentários desse bloco: '<>,<>:norm x
 
 "filetype plugin indent on
 "syntax enable
@@ -92,39 +64,15 @@ let g:tagbar_type_bib = {
 "highlight VimtexErrorLine guifg=violet
 ""------------------ VIMTEX END -------------
 
-
-
-
-" The following Vimtex commands were not used
-
-" Set underline style for error highlighting
-"highlight Error cterm=underline gui=underline
-
-"let g:vimtex_complete_bib = { 'simple': 0 }
-
-"Faz com que nenhuma tag (itálico, negrito) do Latex seja ocultada.
-"let g:tex_conceal = ''
-"let g:vimtex_syntax_conceal = {}
-
-"Sublinha os textos em itálico e negrito
-"Não está funcionado, mas se colocar direto no nvim, funciona
-"hi texItalStyle cterm=underline gui=underline
+" ----------------------ARARA COMPILADOR----
 "Usando o Arara como compilador.
 "let g:vimtex_compiler_method = 'arara'
 "Omite o log do Arara quando compila o tex
 "let g:vimtex_compiler_arara = {'options' : ['-v'] }
 
-"let g:vimtex_view_general_viewer = 'mupdf.exe'
-"NECESSARIO instalar : ':CocInstall coc-vimtex'
-"	Comando goto definition 'gd' não funciona. Utilizo tags para substituir isso.
 "	Não consigo compilar apenas trechos do documento. Ex:
 "			:1,10 VimtexCompileSelected
 "NECESSARIO gerar executavel NVR do projeto 'https://github.com/mhinz/neovim-remote'
-"NECESSARIO verificar o compilador 
-" 	Latexmk
-"		vem com 'miktex'. 
-"		Ele utiliza o perl. É necessário instalar o Perl por fora.
-"		Se houver erro na versão do Perl, coloque, no Path, o caminho para o Perl instalado como um dos primeiros paths verificados.
 "	Arara 
 "		vem com o miktex; acho que usa o java;
 "		Necessário incluir o comando abaixo na primeira linha do main.tex
@@ -142,25 +90,3 @@ let g:tagbar_type_bib = {
 " % arara: --> synctex: yes
 " % arara: --> }
 " % arara: clean: { extensions: [ aux, lof, lot, gz, toc, idx, blg, dvi, ps, yaml ] }
-
-"NECESSARIO baixar viewer de pdf:
-"	https://mupdf.com/ (bem simples)
-"	SamantraPDF (mais completo que o anterior)"
-
-"Testei o TEXLAB, mas não encontrava as referências a tags de outros arquivos
-"	nem às referências bibliográficas.
-"	Para instalar: ':CocInstall coc-texlab'
-"	Acho que no texlab, a completação de código só funcionam após compilação gerar arquivos auxiliares.
-"	Acho que os arquivos .aux não podem ser apagados pois servem para gerar estrutura lida quando digitamos '\ref'"		 
-"	Por outro lado, com o texlab, é possível compilar capítulos separados, desde que use pacote subfiles do latex.
-"	Exibe o pdf ao finalizar a compilação.
-
-"Essa configuração usa o texlab; problemas ao completar \cite, \ref.
-"call coc#config('latex', {
-"  \   'lint.onChange': v:true,
-"  \	  'latex.build.executable': 'arara',
-"  \   'forwardSearch.executable': 'mupdf.exe',
-"  \   'forwardSearch.args': ['--synctex-forward', '%l:1:%f', '%p'],
-"  \   'build.args': ['-pdf', '-interaction=nonstopmode', '-synctex=1', '-pvc']
-"  \ })
-"nmap <F11> :CocCommand latex.Build<CR>  

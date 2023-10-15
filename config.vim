@@ -13,7 +13,7 @@ set cuc " Column highligh
 silent! colorscheme molokai
 "set encoding = utf8
 set laststatus                         =2              " Status bar
-set nu!                                                " Shows line number column
+set nu                                                " Shows line number column
 set termguicolors
 set iskeyword+=-                                       " Inclui o hifen como parte de uma palavra; Necess?rio para identificar a tag atual
 set tabstop                            =4              " Tabs. May be overridden by autocmd rules
@@ -28,7 +28,6 @@ let no_buffers_menu                    =1
 set mousemodel                         =popup
 set t_Co                               =256
 set guioptions                         =egmrti
-set gfn                                =Monospace\ 10
 set modeline                                           " Use modeline overrides
 set modelines                          =10
 set title
@@ -36,15 +35,11 @@ set titleold                           =               " Terminal
 set titlestring                        =%F
 set clipboard =unnamedplus
 set linebreak                                          " Align text at left
+set autoread
 
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 0 "Setado para 0 pois me parece sem efeito.
-endif
+hi DiagnosticHint guifg=#06aa74
+hi LspCodeLens guifg=#fc25df
+hi LspCodeLensSeparator guifg=#25a3fc
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
@@ -52,7 +47,8 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-"" txt
+" executado sempre que um arquivo com a extensão .txt é lido ou criado.
+" Configura a quebra de linha
 augroup vimrc-wrapping
   autocmd!
   autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
@@ -65,14 +61,14 @@ if !exists('*s:setupWrapping')
   endfunction
 endif
 
-"" make/cmake
+"executado com arquivo no formato make;quando pressionar a tecla Tab, o Vim insere um caractere de tabulação 
+"executado sempre que o Vim lê ou cria um arquivo com o nome CMakeLists.txt
 augroup vimrc-make-cmake
   autocmd!
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 augroup END
 
-set autoread
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=
@@ -80,6 +76,22 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
+" O CSApprox é um plugin do Vim que permite que esquemas de cores projetados para o GVim funcionem no Vim em terminais,
+"if has("gui_running")
+""  if has("gui_mac") || has("gui_macvim")
+""    set guifont=Menlo:h12
+""    set transparency=7
+""  endif
+"else
+"  let g:CSApprox_loaded = 0 "Setado para 0 pois me parece sem efeito.
+"endif
+
+"Haskell 
+"StylishHaskell :%!stylish-haskell
+"Para executar: <leader>gq
+"setg formatprg=stylish-haskell
+
+"
 "%s/<palavra a ser substituida>/<palavra nova>/g
 "let mapleader="\<space>"
 "let <leader>sv :souce $MYVIMRC

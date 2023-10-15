@@ -12,7 +12,7 @@ func! CompileGcc()
     exec "w" 
     make			
 endfunc
-au filetype c nnoremap <F11> :call CompileGccExec()<CR>
+au filetype c nnoremap <F10> :call CompileGccExec()<CR>
 func! CompileGccExec()
     exec "w" 
     make

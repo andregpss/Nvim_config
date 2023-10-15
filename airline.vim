@@ -1,7 +1,3 @@
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
-
 "Tabs (Airline tab)
 nnoremap <S-Tab>        : bprevious<CR>
 nnoremap <Tab>          : bnext<CR>
@@ -13,23 +9,25 @@ nmap <leader>2          : bfirst<CR>           : bn<CR>
 nmap <leader>3          : bfirst<CR>           : 2bn<CR>
 nmap <leader>4          : bfirst<CR>           : 3bn<CR>
 
+let g:airline_theme                      = 'murmur'
+
+" Extensions
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled  = 1
+let g:airline#extensions#coc#enabled     = 1
+let g:airline#extensions#ale#enabled     = 1
+let g:airline#extensions#tagbar#enabled  = 1
+let g:airline_skip_empty_sections        = 1
 
 " vim-airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
-" vim-airline
-let g:airline_theme                      = 'murmur'
-let g:airline#extensions#branch#enabled  = 1
-let g:airline#extensions#ale#enabled     = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled  = 1
 let g:airline_powerline_fonts            = 1
-let g:airline_skip_empty_sections        = 1
-let g:airline#extensions#ale#enabled     = 1
 
-
+"Condition below is True if do not want to use Powerline Symbols; It is necessary to
+"comment 'airline_powerline_fonts'
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep     = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -47,7 +45,6 @@ if !exists('g:airline_powerline_fonts')
   let g:airline_symbols.paste                   = 'Ã'
   let g:airline_symbols.paste                   = '∥'
   let g:airline_symbols.whitespace              = 'Ξ'
-"else
   let g:airline#extensions#tabline#left_sep     = ''
   let g:airline#extensions#tabline#left_alt_sep = ''
 
@@ -62,3 +59,4 @@ if !exists('g:airline_powerline_fonts')
   let g:airline_symbols.readonly                = 'ro'
   let g:airline_symbols.linenr                  = ''
 endif
+

@@ -1,7 +1,12 @@
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
 
 "Let disabled to not conflit with LSP completion!
-let g:ale_pattern_options = {'\.hs$': {'ale_enabled': 0},'\.cabal$': {'ale_enabled': 0},'\.tex$': {'ale_enabled': 0}}
+let g:ale_pattern_options = {'\.hs$': {'ale_enabled': 0},
+    \  '\.tex$': {'ale_enabled': 0},
+    \ '\.cabal': {'ale_enabled': 0},
+    \  '\.cpp': {'ale_enabled': 0},
+    \ '\.c': {'ale_enabled': 0}}
+
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

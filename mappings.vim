@@ -1,7 +1,7 @@
 map ]e :lnext<CR>
 map [e :lprevious<CR>
 
-nnoremap <leader>b :lua require('nvim-navbuddy').open() <CR>
+nnoremap <leader>sr :source $MYVIMRC<CR> 
 "Elimina o atalho para a tecla Tab no modo de inserção.
 "inoremap <Tab> <Tab>
 
@@ -14,6 +14,8 @@ nnoremap <silent> <leader><space> :noh<cr>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
+
+nnoremap <F5> :UndotreeToggle<CR>
 
 "Moves the current linhe down or up
 nnoremap <c-m> :m .+1<CR>==
