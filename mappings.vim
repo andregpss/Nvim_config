@@ -1,9 +1,14 @@
 map ]e :lnext<CR>
 map [e :lprevious<CR>
 
+"Delete current file without cuting ir
+nnoremap dx "_dd 
+
 nnoremap <leader>sr :source $MYVIMRC<CR> 
-"Elimina o atalho para a tecla Tab no modo de inserção.
-"inoremap <Tab> <Tab>
+
+" On Visual mode, insert or remove Tabulation
+:vmap <Tab> >gv
+:vmap <S-Tab> <gv
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
@@ -39,7 +44,8 @@ noremap <Leader>v :<C-u>vsplit<CR>
 " maximize current split or return to previous
 noremap <C-w>m :MaximizerToggle<CR>
 
-
+nnoremap <Leader>o  o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
 "" Git
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
@@ -50,7 +56,7 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 "" Open current line on GitHub
-nnoremap <Leader>o :.Gbrowse<CR>
+nnoremap <Leader>go :.Gbrowse<CR>
 
 " session management
 nnoremap <leader>so :OpenSession<Space>

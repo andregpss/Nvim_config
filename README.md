@@ -1,23 +1,25 @@
 # NeoVim Configuration
 Neovim config files, including configurations for Latex, Haskell, Grammarly and C/C++
-(https://dotfyle.com/andregpss)
+(https://dotfyle.com/andregpss).
 
 ## **Table Of Contents**
 - [Install](#install)
 - [Languages Shortcut](#languages-shortcuts)
 - [General Shortcuts](#general-shortcuts)
 - [Troubleshooting](#troubleshooting)
-- [Plug-Ins to evaluate](#PlugIns-to-evaluate)
-- [In Desuse](#In-desuse)
+- [Plug-Ins to evaluate](#plugins-to-evaluate)
+- [In Desuse](#in-desuse)
 
 ## Install
+In addition to the `.vim` files contained in this project, it is necessary to install the following softwares:
+
 1. Latex 
    - Latex compiler
    - SumatraPDF
    - TexLab (download [here](https://github.com/latex-lsp/texlab/releases))
 2. Grammarly 
    - Grammarly app (Premium user)
-   - Grammarly language Server (download [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#grammarly))
+   - Grammarly language Server (download [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#grammarly) or build as described on troubleshooting)
    - Node.js
 3. Haskell 
    - GHC Compiler
@@ -34,19 +36,26 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
    - fd (file system)
    - BurntSushi.ripgrep.MSVC (winget)    
 7. Other
-    - Universal CTags (download [here](https://github.com/universal-ctags/ctags-win32/releases/)) (useful for formats whose LSP clients are not installed)
+    - Universal CTags (download [here](https://github.com/universal-ctags/ctags-win32/releases/)) (useful for file formats whose LSP clients are not installed)
 
 ## Languages Shortcuts
 
 - **LSPConfig (Grammarly, Latex(TexLab), Haskell, C/C++)**
-    -   TODO insert new keymaps
     - 	``[d, ]d`` - navegate between erros and warnings
 	- 	``<space> e `` - shows the popup menu
-	- 	``<space> ca `` - code action
+	- 	``<space> ca `` or `F4` - code action
     - 	``<space> q ``- diagnostic list
 	- 	``<space> rn ``- rename
     -   ``\cr`` - shows code lens
-    - 	`K, gd, gi, gr,<ctrl>+k,<space>D` - Other common commands 
+    - 	`K, gd, gD,  gi, gr`, `gs, go` - Go commands
+        - 	(d=definition, D=declaration, i=implementation, r=references,
+        s=signature, o=type definition )
+    -   `<space>D` - Type definition
+    -   `\sy `- symbols outline (other keys: +,-,f,u)
+    -   `<space>rn` - rename
+    -   `<space>wl` - list workspace folders 
+    -   `<space>f` - format
+    -   ``<ctrl>+k, <ctrl>+L, <ctrl>+J``, `<ctrl>+E`  (Snippets or code constructors)(works only for Haskell snippets?)
 
 [Up](#install)
 
@@ -67,8 +76,24 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
         - Files manipulation: ``alt+c`` (create file), ``alt+r`` (rename)
     - Other commands: ``hoogle, luasnip, ctags_outline, keymaps, colorscheme, command_history, help_tags, vim_options, builtin, current_buffer_fuzzy_find, grep_string, git_files``.
 
-- **Snippets** (code constructors)
-    - ``<ctrl>+k, <ctrl>+L, <ctrl>+J`` (works only for Haskell snippets?)
+- NeoTree
+    - backspace - go to the parent node
+    - P - file preview
+    - i - file info
+    - o - reorder files
+    - / - search for files
+    - D - search for directory
+    - . - turns current directory into root directory
+    - C - closes current node
+    - z - closes all nodes
+    - a - add file
+    - A - add directory
+    - d,r - delete and remove a file
+    - y,x,p - copy, cut and paste a file
+    - m - move a file
+    - R - refresh Neotree
+    - ? - help
+    - Show diagnostic window `:Neotree diagnostics reveal bottom`
 
 - **Navbuddy** 
     - Works only with LSPServer!! (not works with Coc)
@@ -77,19 +102,12 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
         - Some fonts does not have all the icons used by Navbuddy. One of the fonts that have all the icons is Agave Nerd Font.
         - There is an error when Navbuddy is called and the cursor is on the first line of a Haskell file.
 
-- **NerdTree**
-    - ``<F2>`` or ``<Leader>v `` or ``:NERDTreeFind`` (shows the current file on NerdTree)	 
-	- ``<F3>`` or ``<Leader>n `` or ``:NERDTreeToggle  ``
-	- `hjkl` - navega similar às teclas de navegação
-	- `r` - atualiza o diretório corrente
-	- `m` - mostra o menu
-	- `B` - mostra/oculta os bookmarks
-	- `x` - fecha o diretório corrente
-	- `X` - fecha todos os diretórios abertos
-	- `e` - abre o diretório corrente na janela principal
-	- `p` - move para o diretório pai
-    - `CD` - muda o diretório root
-    - `U` - sobe o diretório root 
+- UFO (Folds *indented* code)
+    - `zo,zc` - open or close fold on current code
+    - `za` - alternates (toogle) between open or close current fold
+    - `zk` - shows preview Window when code is folded
+    - `zR,zM` - open or close all folds.
+    - `zf,zd` - creates or deletes a fold on the selected area
 
 - **Surround**
 	- `S<characters><enter>` - surround Visual selection with `<carachters>`
@@ -102,16 +120,16 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- Livedown Previews (Markdown, Readme)
         - :LivedownPreview 
 	- Airline Tabs			
-		- Tab, ShiftTab, \Tab, \1, \2, \3			
+		- `Tab`, `Shift+Tab`, `\Tab`, `\1`, `\2`, `\3`			
 		- :bnext, :bprevious, :bfirst			
 		- :blast, :b10, ``:b <buffer-name>``, :bdelete[!], :badd
     - Tabularize
         - ``:Tab /= `` - Alinha(Tabula) verticalmente o símbolo ‘=’ em todas as linhas selecionadas
-	- SymbolOutline
         - ``\sy``
+    - SymbolOutline
         - Others: ``+, -, f, u``
     - TagBar
-		- F8 - mostra tagbar
+		- F8 - show tagbar
         - ``Ctags`` executable is necessary
     - Undo Tree
         - ``F5``
@@ -157,7 +175,7 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
         - Open the `bbl` file and locate the line where the error is. This line contains an invalid character. For example, the character `_` should be `_`.
 - C/C++
     - Alternatively, consider using the ALE plugin, which displays messages from GCC, Clangd, and clang-tidy.
-    - Attempted to install the CCLS plugin but encountered issues using it in nvim. Here are some observations:
+    - I attempted to install the CCLS plugin but encountered issues using it in nvim. Here are some observations:
        - Initially, CCLS was my preferred Language Server Protocol (LSP) plugin for C. However, after successfully configuring clangd (as described above), I found that ccls provides similar functionality to clangd.
        - To download CCLS: `choco install ccls`.
        - Before discovering the installation via Chocolatey (choco), I attempted to build CCLS from source but faced challenges. Additional observations include:
@@ -165,11 +183,13 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
           - Encountered errors when trying to build LLVM with GCC; the ninja command threw an error.
           - Considered using the Visual Studio CL compiler, but the installation demanded significant disk space.
           - Tutorial URL for CCLS build [here](https://github.com/MaskRay/ccls/wiki/Build#windows).
+- Grammarly
+    - Language server download on the above link may be updated. Solution: [build manually](https://github.com/DanRoscigno/nvim-markdown-grammarly)
+        - How to build: [download project](https://github.com/znck/grammarly) -> pnpm install -> pnpm run build -> on your grammarly LSP require script, update the path.
 - Others
     - Error installing ``Telescope Treesitter`` (cant find .h files when using CLang, necessary when installing languages parsers)
     - Error installing ``Telescope-media-files`` (not compatible with windows, even using ``Chafa``).
     - Error when cursor is on Haskell Pragmas and then calls ``Navbuddy`` 
-
 
 [Up](#install)
 
@@ -190,28 +210,28 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
 	- Coc plugin is an LSP manager for Neovim that offers more advanced and customizable features. 
     - Coc plugin (Necessary to complete citations and references)
             - :CocInstall coc-texlab
-    - :CocInstall coc-hls (haskell language server)
-    - K - show the documentation for the current item
-	- **[g, ]g** - move between lint comments
-    - \cl - applies fix suggested by CodeLens 
-    - \qf - quickfix window
-    - \a - Code Action; lists on a popup the action to the command where the cursor is in.
-    - \ac - lists all the code actions
-    - \gq - applies (what?)
-	- \p - applies code lens (aquelas exibidas como texto virtual)
+    - `:CocInstall coc-hls` (haskell language server)
+    - `K` - show the documentation for the current item
+	- `[g, ]g` - move between lint comments
+    - `\cl` - applies fix suggested by CodeLens 
+    - `\qf` - quickfix window
+    - `\a` - Code Action; lists on a popup the action to the command where the cursor is in.
+    - `\ac` - lists all the code actions
+    - `\gq` - applies (what?)
+	- `\p` - applies code lens (aquelas exibidas como texto virtual)
         - Also used to add a function signature. Put the cursor on a function without signature and then press `\p` 
-	- to - Apply one hint at cursor position (?)
-	- ta - Apply all suggestions in the file (?)
+	- `to` - Apply one hint at cursor position (?)
+	- `ta` - Apply all suggestions in the file (?)
     - ``<space>+a ``- shows all the code diagnostic  
 	- ``<space>+o ``- shows the functions list in a file 
 	- ``<leader>rn `` - rename
 	- `<c-space> `to trigger completion - Coc
-	- \f - format selected Code
-	- :Format - format all the code in the current file
-    - gd (coc-definition)	
-	- gy (coc-type-definition) Jump to type definition(s) of current symbol by invoke
-	- gi (coc-implementation) 
-	- gr (coc-references)	Lists all the references for a type in a project
+	- `\f` - format selected Code
+	- `:Format` - format all the code in the current file
+    - `gd` (coc-definition)	
+	- `gy` (coc-type-definition) Jump to type definition(s) of current symbol by invoke
+	- `gi` (coc-implementation) 
+	- `gr` (coc-references)	Lists all the references for a type in a project
 
 - **ALE (C Programming**)
 	- `[e`, `]e` - navegate the erros (Similar to :lnext, :lprevious)
@@ -220,6 +240,21 @@ Neovim config files, including configurations for Latex, Haskell, Grammarly and 
     - ``:Errors`` - shows the error window 	
 	- `F9` - Compile .c files
 	- `F11` - Compile and Run .c files
+
+- **NerdTree**
+    - ``<F2>`` or ``<Leader>v `` or ``:NERDTreeFind`` (shows the current file on NerdTree)	 
+	- ``<F3>`` or ``<Leader>n `` or ``:NERDTreeToggle  ``
+	- `hjkl` - navega similar às teclas de navegação
+	- `r` - atualiza o diretório corrente
+	- `m` - mostra o menu
+	- `B` - mostra/oculta os bookmarks
+	- `x` - fecha o diretório corrente
+	- `X` - fecha todos os diretórios abertos
+	- `e` - abre o diretório corrente na janela principal
+	- `p` - move para o diretório pai
+    - `CD` - muda o diretório root
+    - `U` - sobe o diretório root 
+
 
 
 [Up](#install)

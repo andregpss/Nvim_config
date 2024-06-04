@@ -20,15 +20,6 @@ call plug#begin()
 Plug 'sheerun/vim-polyglot'                     " A collection of language packs for Vim (Syntax highlighting, indentation, matching rules and mappings).
 Plug 'shime/vim-livedown'                       " Preview Markdown Readme
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'} " Add extra features to LSPs 
-" Plug 'dense-analysis/ale'                       " Used for GCC compiling
-" Plug 'vim-syntastic/syntastic'
-"Plug 'nbouscal/vim-stylish-haskell'
-
-""Inserts various keymaps for snippets. I did not think it is interesting. 
-" See snipets and their keymaps on: https://wolfgangmehner.github.io/vim-plugins/csupport.html 
-"Plug 'WolfgangMehner/c-support' 
-
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'           
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -43,10 +34,11 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'mrcjkb/haskell-snippets.nvim'
 Plug 'VonHeikemen/lsp-zero.nvim'
+
 " General features
-Plug 'preservim/nerdtree'                      " Alternative implementation: Plug 'scrooloose/nerdtree'
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'mrbjarksen/neo-tree-diagnostics.nvim'
 Plug 'preservim/tagbar'                       " Mostra estrutura do código em uma barra vertical (atalho F8); Haskell nao é suportado
-Plug 'PhilRunninger/nerdtree-visual-selection' " NerdTree key mappings
 Plug 'vim-airline/vim-airline'                 " Status bar
 Plug 'vim-airline/vim-airline-themes'          " Colour schemes for status bar 
 Plug 'tomasr/molokai'                          " Molokai color scheme
@@ -57,22 +49,35 @@ Plug 'Raimondi/delimitMate'                    " Closes parentheses, brackets, e
 Plug 'tpope/vim-surround'                      " surroundings with parentheses, brackets, quotes, XML tags, and more. Commands: cs and ds
 Plug 'ludovicchabant/vim-gutentags'            " (re)generate in background tag files as you work. When not using Gustentags, you must generate the tags manually.
 Plug 'szw/vim-maximizer'                       " Maximizes and restores the current window
+Plug 'nvim-focus/focus.nvim'
 Plug 'tpope/vim-characterize' " Shows additional information about a character when `ga` is pressed
 Plug 'mbbill/undotree' " visualizes the undo history and browse and switch between different undo branches
+Plug 'simrat39/symbols-outline.nvim' " Barra com lista de símbolos
+Plug 'szw/vim-maximizer' "Maximizes and restores current window <F3>
+
+Plug 'kevinhwang91/nvim-ufo'
+Plug 'kevinhwang91/promise-async'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'rcarriga/nvim-notify'
+Plug 'mrded/nvim-lsp-notify'
+" Plug 'j-hui/fidget.nvim' "Similar to nvim-notify + lsp_notify
+
+"Wilder
+function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+endfunction
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+
 " Git features
 Plug 'airblade/vim-gitgutter' " indica com ~ as linhas alteradas deste o ultimo push
 Plug 'tpope/vim-rhubarb'      " required by fugitive to :Gbrowse
 							  " Abre o arquivo atual no github
 Plug 'tpope/vim-fugitive'     " GIT atalhos
-Plug 'ahmedkhalf/project.nvim' " Project management
-Plug 'simrat39/symbols-outline.nvim' " Barra com lista de símbolos
 
-if isdirectory('/usr/local/opt/fzf') 
-  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-else
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-  Plug 'junegunn/fzf.vim'
-endif
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 let g:fzf_preview_command = '' " Disable commands on popup window. That commands conflicts with LSP commands.
 
 "The Following command is necessary to install Vimproc (i think)
@@ -101,10 +106,16 @@ Plug 'BurntSushi/ripgrep'
 Plug 'luc-tielen/telescope_hoogle'
 Plug 'fcying/telescope-ctags-outline.nvim'
 Plug 'benfowler/telescope-luasnip.nvim'
-" Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'smartpde/telescope-recent-files'
 Plug 'FeiyouG/commander.nvim'
+Plug 'ahmedkhalf/project.nvim' " Project management integrated with telescope
+Plug 'frabjous/knap' "Tex and MD preview. Does not launch Viewer.
+
+"Plug 'PhilRunninger/nerdtree-visual-selection' " NerdTree key mappings
+"Plug 'preservim/nerdtree'                      " Alternative implementation: Plug 'scrooloose/nerdtree'
+"Plug 'nvim-tree/nvim-tree.lua'
+
 " Plug 'nvim-treesitter/nvim-treesitter',  {'do': ':TSUpdate'} "Removed
 " because can not install langauges parsers, due that clang compiler,
 " installed by LLVM, does not find `.h` files
@@ -118,7 +129,14 @@ Plug 'FeiyouG/commander.nvim'
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
 
-"Plug 'MarcWeber/hasktags'           " Reconhece tags do haskell
-			                        " NECESSARIO compilar com Cabal e copiar executavel para dir do nvim.exe
+" Plug 'neoclide/coc.nvim', {'branch': 'release'} " Add extra features to LSPs 
+" Plug 'dense-analysis/ale'                       " Used for GCC compiling
+" Plug 'vim-syntastic/syntastic'
+"Plug 'nbouscal/vim-stylish-haskell'
+
+""Inserts various keymaps for snippets. I did not think it is interesting. 
+" See snipets and their keymaps on: https://wolfgangmehner.github.io/vim-plugins/csupport.html 
+"Plug 'WolfgangMehner/c-support' 
+
 
 call plug#end()

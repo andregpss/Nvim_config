@@ -1,6 +1,8 @@
 lua << EOF
-
-require('lspconfig').grammarly.setup{filetypes={"tex","text","markdown"}}
+-- https://github.com/DanRoscigno/nvim-markdown-grammarly
+require('lspconfig').grammarly.setup{
+    cmd = { "C:\\hls\\grammarly-0.24.0\\extension\\node_modules\\.bin\\grammarly-languageserver", "--stdio" },
+    filetypes={"tex","text","markdown"}}
 
 -- This command is necessary to enable ':TexlabBuild' command 
 require'lspconfig'.texlab.setup{
@@ -8,7 +10,7 @@ settings = {
     texlab = {
         auxDirectory = "temp",
         chktex = {onEdit=true},
-       forwardSearch = {
+        forwardSearch = {
             executable='SumatraPDF-3.2-64.exe',
             args = {    "-reuse-instance",
             "%p",
@@ -17,15 +19,15 @@ settings = {
             "%l"
             }
             },
-       }
+    }
     },
 }
 
 -- https://github.com/neovim/nvim-lspconfig/wiki/Comparison-to-other-LSP-ecosystems-(CoC,-vim-lsp,-etc.)
 require'lspconfig'.hls.setup{
     settings = {
-                \ haskell = {
-                    plugin={stan={globalOn=false}}
+                 haskell = {
+                 plugin={stan={globalOn=false}}
                     }
                 },
  }

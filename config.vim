@@ -76,6 +76,38 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
+" Enable/disable wrapen mode pressing '\w'. 
+" When disabled, 'j' and 'k' keys are used do navegate
+" between the lines
+let s:wrapenabled = 0
+function! ToggleWrap()
+  set wrap nolist
+  if s:wrapenabled
+    set nolinebreak
+    unmap j
+    unmap k
+    unmap 0
+    unmap ^
+    unmap $
+    let s:wrapenabled = 0
+  else
+    set linebreak
+    nnoremap j gj
+    nnoremap k gk
+    nnoremap 0 g0
+    nnoremap ^ g^
+    nnoremap $ g$
+    vnoremap j gj
+    vnoremap k gk
+    vnoremap 0 g0
+    vnoremap ^ g^
+    vnoremap $ g$
+    let s:wrapenabled = 1
+  endif
+endfunction
+map <leader>w :call ToggleWrap()<CR>
+
+
 " O CSApprox é um plugin do Vim que permite que esquemas de cores projetados para o GVim funcionem no Vim em terminais,
 "if has("gui_running")
 ""  if has("gui_mac") || has("gui_macvim")

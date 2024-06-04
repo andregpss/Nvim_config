@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="neovim-configuration">NeoVim Configuration</h1>
+<p>Neovim config files, including configurations for Latex, Haskell,
+Grammarly and C/C++ (https://dotfyle.com/andregpss).</p>
+<h2 id="table-of-contents"><strong>Table Of Contents</strong></h2>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#languages-shortcuts">Languages Shortcut</a></li>
+<li><a href="#general-shortcuts">General Shortcuts</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#plugins-to-evaluate">Plug-Ins to evaluate</a></li>
+<li><a href="#in-desuse">In Desuse</a></li>
+</ul>
+<h2 id="install">Install</h2>
+<p>In addition to the <code>.vim</code> files contained in this project,
+it is necessary to install the following softwares:</p>
+<ol type="1">
+<li>Latex
+<ul>
+<li>Latex compiler</li>
+<li>SumatraPDF</li>
+<li>TexLab (download <a
+href="https://github.com/latex-lsp/texlab/releases">here</a>)</li>
+</ul></li>
+<li>Grammarly
+<ul>
+<li>Grammarly app (Premium user)</li>
+<li>Grammarly language Server (download <a
+href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#grammarly">here</a>
+or build as described on troubleshooting)</li>
+<li>Node.js</li>
+</ul></li>
+<li>Haskell
+<ul>
+<li>GHC Compiler</li>
+<li>Haskell Language Server</li>
+<li>Stylish haskell (optional)</li>
+</ul></li>
+<li>C/C++
+<ul>
+<li><code>clangd</code> LSP client (<code>winget install llvm</code>).
+<ul>
+<li>All warnings, such as unused variables, are displayed only if
+configured in the <code>.clangd</code> file and when there is no
+compilation error in the file.</li>
+</ul></li>
+<li><code>gcc</code> compiler is optional (i think)</li>
+<li>Comments about <code>clangd</code> and <code>ccls</code>
+installation <a href="#troubleshooting">here</a>.</li>
+</ul></li>
+<li>Markdown Readme live view
+(<code>npm install -g livedown</code>)</li>
+<li>Advanced find
+<ul>
+<li>fzf (fuzzy)</li>
+<li>fd (file system)</li>
+<li>BurntSushi.ripgrep.MSVC (winget)<br />
+</li>
+</ul></li>
+<li>Other
+<ul>
+<li>Universal CTags (download <a
+href="https://github.com/universal-ctags/ctags-win32/releases/">here</a>)
+(useful for file formats whose LSP clients are not installed)</li>
+</ul></li>
+</ol>
+<h2 id="languages-shortcuts">Languages Shortcuts</h2>
+<ul>
+<li><strong>LSPConfig (Grammarly, Latex(TexLab), Haskell,
+C/C++)</strong>
+<ul>
+<li><code>[d, ]d</code> - navegate between erros and warnings</li>
+<li><code>&lt;space&gt; e</code> - shows the popup menu</li>
+<li><code>&lt;space&gt; ca</code> or <code>F4</code> - code action</li>
+<li><code>&lt;space&gt; q</code>- diagnostic list</li>
+<li><code>&lt;space&gt; rn</code>- rename</li>
+<li><code>\cr</code> - shows code lens</li>
+<li><code>K, gd, gD,  gi, gr</code>, <code>gs, go</code> - Go commands
+<ul>
+<li>(d=definition, D=declaration, i=implementation, r=references,
+s=signature, o=type definition )</li>
+</ul></li>
+<li><code>&lt;space&gt;D</code> - Type definition</li>
+<li><code>\sy</code>- symbols outline (other keys: +,-,f,u)</li>
+<li><code>&lt;space&gt;rn</code> - rename</li>
+<li><code>&lt;space&gt;wl</code> - list workspace folders</li>
+<li><code>&lt;space&gt;f</code> - format</li>
+<li><code>&lt;ctrl&gt;+k, &lt;ctrl&gt;+L, &lt;ctrl&gt;+J</code>,
+<code>&lt;ctrl&gt;+E</code> (Snippets or code constructors)(works only
+for Haskell snippets?)</li>
+</ul></li>
+</ul>
+<p><a href="#install">Up</a></p>
+<h2 id="general-shortcuts">General Shortcuts</h2>
+<ul>
+<li><strong>Telescope</strong>
+<ul>
+<li><code>:Telescope &lt;command&gt;</code></li>
+<li><code>\tc</code> (shows main commands (pickers))</li>
+<li><code>\ff</code> (find files) (see also file_browser)</li>
+<li><code>\fg</code> (live grep)(requires ripgrep)</li>
+<li><code>\fb</code> (search on open buffers)</li>
+<li><code>\td</code> (diagnostics)</li>
+<li><code>\tq</code> (quick fix)</li>
+<li><code>\\</code> (recent files) (see also oldfiles)</li>
+<li><code>\tp</code> (recent projects)</li>
+<li>file_browser:
+<ul>
+<li><code>&lt;space&gt;fb</code>, <code>&lt;space&gt;bb</code></li>
+<li>Files manipulation: <code>alt+c</code> (create file),
+<code>alt+r</code> (rename)</li>
+</ul></li>
+<li>Other commands:
+<code>hoogle, luasnip, ctags_outline, keymaps, colorscheme, command_history, help_tags, vim_options, builtin, current_buffer_fuzzy_find, grep_string, git_files</code>.</li>
+</ul></li>
+<li>NeoTree
+<ul>
+<li>backspace - go to the parent node</li>
+<li>P - file preview</li>
+<li>i - file info</li>
+<li>o - reorder files</li>
+<li>/ - search for files</li>
+<li>D - search for directory</li>
+<li>. - turns current directory into root directory</li>
+<li>C - closes current node</li>
+<li>z - closes all nodes</li>
+<li>a - add file</li>
+<li>A - add directory</li>
+<li>d,r - delete and remove a file</li>
+<li>y,x,p - copy, cut and paste a file</li>
+<li>m - move a file</li>
+<li>R - refresh Neotree</li>
+<li>? - help</li>
+<li>Show diagnostic window
+<code>:Neotree diagnostics reveal bottom</code></li>
+</ul></li>
+<li><strong>Navbuddy</strong>
+<ul>
+<li>Works only with LSPServer!! (not works with Coc)</li>
+<li><code>\b</code> or <code>:Navbuddy</code> - theres an initial error,
+but it works when you move to the right (‘l’ key)</li>
+<li><code>j</code>,<code>k</code>,<code>h</code>,<code>l</code> - move
+down, up, left, right
+<ul>
+<li>Some fonts does not have all the icons used by Navbuddy. One of the
+fonts that have all the icons is Agave Nerd Font.</li>
+<li>There is an error when Navbuddy is called and the cursor is on the
+first line of a Haskell file.</li>
+</ul></li>
+</ul></li>
+<li>UFO (Folds <em>indented</em> code)
+<ul>
+<li><code>zo,zc</code> - open or close fold on current code</li>
+<li><code>za</code> - alternates (toogle) between open or close current
+fold</li>
+<li><code>zk</code> - shows preview Window when code is folded</li>
+<li><code>zR,zM</code> - open or close all folds.</li>
+<li><code>zf,zd</code> - creates or deletes a fold on the selected
+area</li>
+</ul></li>
+<li><strong>Surround</strong>
+<ul>
+<li><code>S&lt;characters&gt;&lt;enter&gt;</code> - surround Visual
+selection with <code>&lt;carachters&gt;</code></li>
+<li><code>ysiw&lt;character&gt;&lt;enter&gt;</code> - surround word with
+<code>&lt;character&gt;</code></li>
+<li><code>yssc &lt;digitar comando&gt;</code> (envolve a linha
+posicionada com o comando). Ex: yssc textit</li>
+<li><code>ysse &lt;digitar environment&gt;</code>(idem para o
+environment). Ex: <code>ysse tabular</code></li>
+<li><code>ysee ou ysec</code> (mesma coisa para a palavra
+posicionada)</li>
+</ul></li>
+<li><strong>Several plug-ins (Git, Airline, Syntastic, Tabbar,
+Tagbar,FZV,VimProc)</strong>
+<ul>
+<li>Livedown Previews (Markdown, Readme)
+<ul>
+<li>:LivedownPreview</li>
+</ul></li>
+<li>Airline Tabs
+<ul>
+<li><code>Tab</code>, <code>Shift+Tab</code>, <code>\Tab</code>,
+<code>\1</code>, <code>\2</code>, <code>\3</code><br />
+</li>
+<li>:bnext, :bprevious, :bfirst<br />
+</li>
+<li>:blast, :b10, <code>:b &lt;buffer-name&gt;</code>, :bdelete[!],
+:badd</li>
+</ul></li>
+<li>Tabularize
+<ul>
+<li><code>:Tab /=</code> - Alinha(Tabula) verticalmente o símbolo ‘=’ em
+todas as linhas selecionadas</li>
+<li><code>\sy</code></li>
+</ul></li>
+<li>SymbolOutline
+<ul>
+<li>Others: <code>+, -, f, u</code></li>
+</ul></li>
+<li>TagBar
+<ul>
+<li>F8 - show tagbar</li>
+<li><code>Ctags</code> executable is necessary</li>
+</ul></li>
+<li>Undo Tree
+<ul>
+<li><code>F5</code></li>
+</ul></li>
+<li>Airline Theme
+<ul>
+<li>:echo g:airline_symbols - símbolos usados na linha de status</li>
+<li><code>:AirlineTheme &lt;theme&gt;</code></li>
+</ul></li>
+<li>FZV, VimProc, VIM-FUGITIVE (git), rhubarb
+<ul>
+<li>:History - últimos arquivos usados<br />
+</li>
+<li><code>:VimProcBang &lt;comando do SO em uso&gt;</code></li>
+</ul></li>
+<li>Github
+<ul>
+<li>:G - git status</li>
+<li>:Gcommit, :Gpush, :Gpull<br />
+</li>
+<li>:Git</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><a href="#install">Up</a></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>HLS (Haskell)
+<ul>
+<li>Plugin doesn’t work:
+<ul>
+<li>Create a <code>hie.yaml</code> file in the project’s root
+folder.</li>
+<li>There might be an issue with the .cabal file or the existing
+hie.yaml.</li>
+<li>Run <code>haskell-language-server</code> or
+<code>haskell-language-server-wrapper</code> in the project’s root
+folder and check for errors.</li>
+<li>Open a code file in the interpreter and see the errors using the
+following command: <code>cabal repl &lt;file name&gt;</code></li>
+</ul></li>
+<li>The <code>hie.yaml</code> file seems to be incorrect.
+<ul>
+<li>Download a program that generates this file automatically from:
+https://github.com/Avi-D-coder/implicit-hie</li>
+</ul></li>
+<li>It appears that the evaluated <code>.cabal</code> or
+<code>.stack</code> file is not the one in the project’s root folder.
+<ul>
+<li>Check if there are any other files of these types in subfolders of
+the project; if so, remove those files from subfolders or from the root
+of the project.</li>
+</ul></li>
+<li>Import is not recognized
+<ul>
+<li>Add module to <code>other-modules</code> clause in cabal</li>
+</ul></li>
+<li>No cradle for module (module definition error)
+<ul>
+<li>Add component to <code>hie.yaml</code></li>
+</ul></li>
+<li>Does not show documentation for functions
+<ul>
+<li>The documentation on hover only works for the parts of the code that
+were saved and successfully compiled.</li>
+<li>https://github.com/haskell/haskell-language-server/issues/52</li>
+</ul></li>
+</ul></li>
+<li>Latex
+<ul>
+<li>The LaTeX compiler has stopped working; the error log indicates that
+there is no error.
+<ul>
+<li>This happened due to an error in the document; delete the PDF file,
+recompile again, and pay attention to the error log.</li>
+</ul></li>
+<li>New bibliographic references appear as
+<code>undefined reference</code> or on the refference shows
+<code>??</code>
+<ul>
+<li>Delete the <code>bbl</code> file, recompile the project, a new ‘bbl’
+version will be generated, and the reference will appear. If it doesn’t
+work, delete all temporary files, including the pdf.</li>
+</ul></li>
+<li>Bibliographic reference in the wrong format (There is an Error in
+LaTeX compilation):
+<ul>
+<li>Change the reference type from online to Misc.</li>
+</ul></li>
+<li>In the bbl file: <code>Missing $ inserted</code>.
+<ul>
+<li>Open the <code>bbl</code> file and locate the line where the error
+is. This line contains an invalid character. For example, the character
+<code>_</code> should be <code>_</code>.</li>
+</ul></li>
+</ul></li>
+<li>C/C++
+<ul>
+<li>Alternatively, consider using the ALE plugin, which displays
+messages from GCC, Clangd, and clang-tidy.</li>
+<li>I attempted to install the CCLS plugin but encountered issues using
+it in nvim. Here are some observations:
+<ul>
+<li>Initially, CCLS was my preferred Language Server Protocol (LSP)
+plugin for C. However, after successfully configuring clangd (as
+described above), I found that ccls provides similar functionality to
+clangd.</li>
+<li>To download CCLS: <code>choco install ccls</code>.</li>
+<li>Before discovering the installation via Chocolatey (choco), I
+attempted to build CCLS from source but faced challenges. Additional
+observations include:
+<ul>
+<li>Couldn’t install CCLS using GCC and the Clangd+LLVM installation via
+winget.</li>
+<li>Encountered errors when trying to build LLVM with GCC; the ninja
+command threw an error.</li>
+<li>Considered using the Visual Studio CL compiler, but the installation
+demanded significant disk space.</li>
+<li>Tutorial URL for CCLS build <a
+href="https://github.com/MaskRay/ccls/wiki/Build#windows">here</a>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Grammarly
+<ul>
+<li>Language server download on the above link may be updated. Solution:
+<a href="https://github.com/DanRoscigno/nvim-markdown-grammarly">build
+manually</a>
+<ul>
+<li>How to build: <a href="https://github.com/znck/grammarly">download
+project</a> -&gt; pnpm install -&gt; pnpm run build -&gt; on your
+grammarly LSP require script, update the path.</li>
+</ul></li>
+</ul></li>
+<li>Others
+<ul>
+<li>Error installing <code>Telescope Treesitter</code> (cant find .h
+files when using CLang, necessary when installing languages
+parsers)</li>
+<li>Error installing <code>Telescope-media-files</code> (not compatible
+with windows, even using <code>Chafa</code>).</li>
+<li>Error when cursor is on Haskell Pragmas and then calls
+<code>Navbuddy</code></li>
+</ul></li>
+</ul>
+<p><a href="#install">Up</a></p>
+<h2 id="plugins-to-evaluate">PlugIns to evaluate</h2>
+<ul>
+<li>List of main plugins:
+https://github.com/rockerBOO/awesome-neovim</li>
+<li>https://github.com/ray-x/navigator.lua</li>
+<li>https://github.com/smjonas/inc-rename.nvim (rename variables)</li>
+<li>https://github.com/rmagatti/goto-preview (LSP’s goto definition,
+type definition, implementation, declaration and references calls in
+floating windows.)</li>
+<li>https://github.com/ldelossa/litee.nvim (Set of Plugins to view code
+structure)</li>
+<li>https://github.com/linrongbin16/lsp-progress.nvim (Show LSP status
+on status bar)</li>
+<li>https://github.com/Wansmer/symbol-usage.nvim (display references,
+definitions, and implementations of document symbols)</li>
+</ul>
+<p><a href="#install">Up</a></p>
+<h2 id="in-desuse">In Desuse</h2>
+<ul>
+<li><strong>COC</strong>
+<ul>
+<li>Neovim’s native LSP support offers basic LSP functionality, many
+users prefer to use plugins like Coc to have a richer and more
+customizable experience.</li>
+<li>Coc plugin is an LSP manager for Neovim that offers more advanced
+and customizable features.</li>
+<li>Coc plugin (Necessary to complete citations and references) -
+:CocInstall coc-texlab</li>
+<li><code>:CocInstall coc-hls</code> (haskell language server)</li>
+<li><code>K</code> - show the documentation for the current item</li>
+<li><code>[g, ]g</code> - move between lint comments</li>
+<li><code>\cl</code> - applies fix suggested by CodeLens</li>
+<li><code>\qf</code> - quickfix window</li>
+<li><code>\a</code> - Code Action; lists on a popup the action to the
+command where the cursor is in.</li>
+<li><code>\ac</code> - lists all the code actions</li>
+<li><code>\gq</code> - applies (what?)</li>
+<li><code>\p</code> - applies code lens (aquelas exibidas como texto
+virtual)
+<ul>
+<li>Also used to add a function signature. Put the cursor on a function
+without signature and then press <code>\p</code></li>
+</ul></li>
+<li><code>to</code> - Apply one hint at cursor position (?)</li>
+<li><code>ta</code> - Apply all suggestions in the file (?)</li>
+<li><code>&lt;space&gt;+a</code>- shows all the code diagnostic<br />
+</li>
+<li><code>&lt;space&gt;+o</code>- shows the functions list in a
+file</li>
+<li><code>&lt;leader&gt;rn</code> - rename</li>
+<li><code>&lt;c-space&gt;</code>to trigger completion - Coc</li>
+<li><code>\f</code> - format selected Code</li>
+<li><code>:Format</code> - format all the code in the current file</li>
+<li><code>gd</code> (coc-definition)</li>
+<li><code>gy</code> (coc-type-definition) Jump to type definition(s) of
+current symbol by invoke</li>
+<li><code>gi</code> (coc-implementation)</li>
+<li><code>gr</code> (coc-references) Lists all the references for a type
+in a project</li>
+</ul></li>
+<li><strong>ALE (C Programming</strong>)
+<ul>
+<li><code>[e</code>, <code>]e</code> - navegate the erros (Similar to
+:lnext, :lprevious)</li>
+<li><code>[a</code>, <code>]a</code> - move between warnings</li>
+<li><code>&lt;ctrl&gt;k</code>,<code>&lt;ctrl&gt;j</code> - move between
+wraps</li>
+<li><code>:Errors</code> - shows the error window<br />
+</li>
+<li><code>F9</code> - Compile .c files</li>
+<li><code>F11</code> - Compile and Run .c files</li>
+</ul></li>
+<li><strong>NerdTree</strong>
+<ul>
+<li><code>&lt;F2&gt;</code> or <code>&lt;Leader&gt;v</code> or
+<code>:NERDTreeFind</code> (shows the current file on NerdTree)<br />
+</li>
+<li><code>&lt;F3&gt;</code> or <code>&lt;Leader&gt;n</code> or
+<code>:NERDTreeToggle</code></li>
+<li><code>hjkl</code> - navega similar às teclas de navegação</li>
+<li><code>r</code> - atualiza o diretório corrente</li>
+<li><code>m</code> - mostra o menu</li>
+<li><code>B</code> - mostra/oculta os bookmarks</li>
+<li><code>x</code> - fecha o diretório corrente</li>
+<li><code>X</code> - fecha todos os diretórios abertos</li>
+<li><code>e</code> - abre o diretório corrente na janela principal</li>
+<li><code>p</code> - move para o diretório pai</li>
+<li><code>CD</code> - muda o diretório root</li>
+<li><code>U</code> - sobe o diretório root</li>
+</ul></li>
+</ul>
+<p><a href="#install">Up</a></p>
+</body>
+</html>

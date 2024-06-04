@@ -14,13 +14,14 @@ if has("win64") || has("win32") || has("win16")
     source ~/AppData/Local/nvim/popup.vim
 " 	source ~/AppData/Local/nvim/coc-config.vim
 "   source ~/AppData/Local/nvim/ale.vim
-	source ~/AppData/Local/nvim/nerdtree.vim
+"	source ~/AppData/Local/nvim/nerdtree.vim
 	source ~/AppData/Local/nvim/airline.vim
 	source ~/AppData/Local/nvim/mappings.vim
 	source ~/AppData/Local/nvim/searcher.vim
     source ~/AppData/Local/nvim/telescope.vim
 	source ~/AppData/Local/nvim/c-language.vim
 	source ~/AppData/Local/nvim/latex.vim
+    source ~/AppData/Local/nvim/knap.vim
 else
 	source ~/.config/nvim/pluglist.vim
 	source ~/.config/nvim/config.vim	

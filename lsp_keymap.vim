@@ -1,7 +1,6 @@
+map <leader>n :Neotree float<CR>
+
 lua << EOF
--- Plugins shortcuts
-vim.keymap.set('n','<leader>b',require('nvim-navbuddy').open )
-vim.keymap.set('n','<leader>sy',":SymbolsOutline<CR>")
 
 -- General shortcuts
  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)

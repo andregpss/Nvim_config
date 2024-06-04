@@ -55,13 +55,15 @@
 !_TAG_PARSER_VERSION!Sh	0.0	/current.age/
 !_TAG_PARSER_VERSION!Vim	0.0	/current.age/
 !_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
-!_TAG_PROC_CWD	C:/Users/Gostavo/AppData/Local/nvim/	//
+!_TAG_PROC_CWD	c:/Users/Gostavo/AppData/Local/nvim/	//
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	6.0.0	/p6.0.20230924.0/
+!_TAG_PROGRAM_VERSION	6.0.0	/p6.0.20231105.0/
 !_TAG_ROLE_DESCRIPTION!Sh!heredoc	endmarker	/end marker/
 !_TAG_ROLE_DESCRIPTION!Sh!script	loaded	/loaded/
+$	./config.vim	/^    nnoremap $ g\$$/;"	m
+$	./config.vim	/^    vnoremap $ g\$$/;"	m
 $I	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	f
 $M	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	method:NQ.D0.rforEach
 $NODE_CLIENT_LOG_FILE	./plugged/coc.nvim/autoload/coc/client.vim	/^    let $NODE_CLIENT_LOG_FILE = s:logfile$/;"	v
@@ -74,11 +76,19 @@ $s	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-g
 **Table Of Contents**	README.md	/^## **Table Of Contents**$/;"	s	chapter:NeoVim Configuration
 +	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	p	variable:NQ.GI
 +	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-glob\/issues\/167`);if(!(this instanceof Di))return new /;"	p	variable:NQ.wL
+0	./config.vim	/^    nnoremap 0 g0$/;"	m
+0	./config.vim	/^    vnoremap 0 g0$/;"	m
 0	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.Un
 1	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.Un
 1	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.ju
 1	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.Mu
 <BS>	./plugged/coc.nvim/autoload/coc/snippet.vim	/^  snoremap <silent> <BS> <c-g>c$/;"	m
+<C-F2>	./knap.vim	/^inoremap <silent> <C-F2> <C-o>:lua require("knap").close_viewer()<CR>$/;"	m
+<C-F2>	./knap.vim	/^nnoremap <silent> <C-F2> :lua require("knap").close_viewer()<CR>$/;"	m
+<C-F2>	./knap.vim	/^vnoremap <silent> <C-F2> <C-c>:lua require("knap").close_viewer()<CR>$/;"	m
+<C-F4>	./knap.vim	/^inoremap <silent> <C-F4> <C-o>:lua require("knap").forward_jump()<CR>$/;"	m
+<C-F4>	./knap.vim	/^nnoremap <silent> <C-F4> :lua require("knap").forward_jump()<CR>$/;"	m
+<C-F4>	./knap.vim	/^vnoremap <silent> <C-F4> <C-c>:lua require("knap").forward_jump()<CR>$/;"	m
 <C-P>	./mappings.vim	/^cnoremap <C-P> <C-R>=expand("%:p:h") . "\/" <CR>$/;"	m
 <C-ScrollWheelDown>	./ginit.vim	/^inoremap <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a$/;"	m
 <C-ScrollWheelDown>	./ginit.vim	/^noremap <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>$/;"	m
@@ -105,21 +115,29 @@ $s	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-g
 <C-w>m	./mappings.vim	/^noremap <C-w>m :MaximizerToggle<CR>$/;"	m
 <CR>	./coc-config.vim	/^inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()$/;"	m
 <DEL>	./plugged/coc.nvim/autoload/coc/snippet.vim	/^  snoremap <silent> <DEL> <c-g>c$/;"	m
+<F1>	./knap.vim	/^inoremap <silent> <F1> <C-o>:lua require("knap").process_once()<CR>$/;"	m
+<F1>	./knap.vim	/^nnoremap <silent> <F1> :lua require("knap").process_once()<CR>$/;"	m
+<F1>	./knap.vim	/^vnoremap <silent> <F1> <C-c>:lua require("knap").process_once()<CR>$/;"	m
+<F2>	./knap.vim	/^inoremap <silent> <F2> <C-o>:lua require("knap").toggle_autopreviewing()<CR>$/;"	m
+<F2>	./knap.vim	/^nnoremap <silent> <F2> :lua require("knap").toggle_autopreviewing()<CR>$/;"	m
+<F2>	./knap.vim	/^vnoremap <silent> <F2> <C-c>:lua require("knap").toggle_autopreviewing()<CR>$/;"	m
 <F2>	./nerdtree.vim	/^nnoremap <silent> <F2> :NERDTreeFind<CR>  $/;"	m
 <F5>	./mappings.vim	/^nnoremap <F5> :UndotreeToggle<CR>$/;"	m
 <F8>	./mappings.vim	/^nmap <F8> :TagbarToggle<CR>$/;"	m
+<Leader>O	./mappings.vim	/^nnoremap <Leader>O O<Esc>0"_D$/;"	m
 <Leader>e	./mappings.vim	/^noremap <Leader>e :e <C-R>=expand("%:p:h") . "\/" <CR>$/;"	m
 <Leader>ga	./mappings.vim	/^noremap <Leader>ga :Gwrite<CR>$/;"	m
 <Leader>gb	./mappings.vim	/^noremap <Leader>gb :Gblame<CR>$/;"	m
 <Leader>gc	./mappings.vim	/^noremap <Leader>gc :Gcommit<CR>$/;"	m
 <Leader>gd	./mappings.vim	/^noremap <Leader>gd :Gvdiff<CR>$/;"	m
 <Leader>gll	./mappings.vim	/^noremap <Leader>gll :Gpull<CR>$/;"	m
+<Leader>go	./mappings.vim	/^nnoremap <Leader>go :.Gbrowse<CR>$/;"	m
 <Leader>gr	./mappings.vim	/^noremap <Leader>gr :Gremove<CR>$/;"	m
 <Leader>gs	./mappings.vim	/^noremap <Leader>gs :Gstatus<CR>$/;"	m
 <Leader>gsh	./mappings.vim	/^noremap <Leader>gsh :Gpush<CR>$/;"	m
 <Leader>h	./mappings.vim	/^noremap <Leader>h :<C-u>split<CR>$/;"	m
 <Leader>n	./nerdtree.vim	/^map <Leader>n :NERDTreeToggle<CR>$/;"	m
-<Leader>o	./mappings.vim	/^nnoremap <Leader>o :.Gbrowse<CR>$/;"	m
+<Leader>o	./mappings.vim	/^nnoremap <Leader>o  o<Esc>0"_D$/;"	m
 <Leader>te	./airline.vim	/^noremap <Leader>te      : tabe <C-R>=expand("%:p:h") . "\/" <CR> " Opens a tab edit command with/;"	m
 <Leader>v	./mappings.vim	/^noremap <Leader>v :<C-u>vsplit<CR>$/;"	m
 <Leader>v	./nerdtree.vim	/^nnoremap <silent> <Leader>v :NERDTreeFind<CR>$/;"	m
@@ -161,6 +179,7 @@ $s	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-g
 <leader>d	./mappings.vim	/^nmap <leader>d :exec "tag ".expand("<cword>")<CR>$/;"	m
 <leader>f	./coc-config.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>f	./coc-config.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
+<leader>n	./lsp_keymap.vim	/^map <leader>n :Neotree float<CR>$/;"	m
 <leader>p	./mappings.vim	/^noremap <leader>p "+gP<CR>$/;"	m
 <leader>qf	./coc-config.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
 <leader>r	./coc-config.vim	/^nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)$/;"	m
@@ -173,6 +192,7 @@ $s	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-g
 <leader>so	./mappings.vim	/^nnoremap <leader>so :OpenSession<Space>$/;"	m
 <leader>sr	./mappings.vim	/^nnoremap <leader>sr :source $MYVIMRC<CR> $/;"	m
 <leader>ss	./mappings.vim	/^nnoremap <leader>ss :SaveSession<Space>$/;"	m
+<leader>w	./config.vim	/^map <leader>w :call ToggleWrap()<CR>$/;"	m
 <space>a	./coc-config.vim	/^nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>$/;"	m
 <space>c	./coc-config.vim	/^nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>$/;"	m
 <space>e	./coc-config.vim	/^nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>$/;"	m
@@ -317,6 +337,8 @@ T	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.ty
 TI	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	f
 TQ	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	c
 Tee	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	method:NQ.D0.rforEach
+TelescopeProjectOnOpen	./lsp_config.vim	/^  augroup TelescopeProjectOnOpen$/;"	a
+ToggleWrap	./config.vim	/^function! ToggleWrap()$/;"	f
 Troubleshooting	README.md	/^## Troubleshooting$/;"	s	chapter:NeoVim Configuration
 U	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.Mu
 UI	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	v
@@ -362,6 +384,8 @@ Zs	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=
 ]a	./ale.vim	/^map ]a :ALENextWrap<CR>$/;"	m
 ]e	./mappings.vim	/^map ]e :lnext<CR>$/;"	m
 ]g	./coc-config.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
+^	./config.vim	/^    nnoremap ^ g^$/;"	m
+^	./config.vim	/^    vnoremap ^ g^$/;"	m
 _7	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-glob\/issues\/167`);if(!(this instanceof Di))return new /;"	f	class:NQ
 _Q	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	v
 _ee	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	method:NQ.D0.rforEach
@@ -938,6 +962,7 @@ diff	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f
 dim	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	p	property:TQ.e.modifier
 dot	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	p	variable:NQ.VQ.anonymousObjectb0d2f4072205
 dot	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	p	variable:NQ.VQ.anonymousObjectb0d2f4072305
+dx	./mappings.vim	/^nnoremap dx "_dd $/;"	m
 e	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	p	variable:anonymousObjectb0d2f4077b05
 e	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	c
 e	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	v	class:TQ
@@ -1085,6 +1110,8 @@ intersects	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*
 inverse	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	p	property:TQ.e.modifier
 italic	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	p	property:TQ.e.modifier
 itemCount	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	G	class:NQ.D0
+j	./config.vim	/^    nnoremap j gj$/;"	m
+j	./config.vim	/^    vnoremap j gj$/;"	m
 j	./plugged/coc.nvim/build/index.js	/^   %s`,j,j,f,r);let q=f.type==="*"?JS:f.type==="?"?XS:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	M	class:NQ.Mu
 j0	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	method:NQ.D0.rforEach
 j7	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	class:NQ
@@ -1094,6 +1121,8 @@ jS	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=
 jb	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-glob\/issues\/167`);if(!(this instanceof Di))return new /;"	f	class:NQ
 jte	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	f	method:NQ.D0.rforEach
 ju	./plugged/coc.nvim/build/index.js	/^See: https:\/\/github.com\/isaacs\/node-glob\/issues\/167`);if(!(this instanceof Di))return new /;"	c	class:NQ
+k	./config.vim	/^    nnoremap k gk$/;"	m
+k	./config.vim	/^    vnoremap k gk$/;"	m
 k	./plugged/coc.nvim/bin/prompt.js	/^    let k = getKey(key)$/;"	v
 k	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	p	variable:anonymousObjectb0d2f4077b05
 kI	./plugged/coc.nvim/build/index.js	/^"use strict";var wQ=Object.create;var Ib=Object.defineProperty;var xQ=Object.getOwnPropertyDescr/;"	f
@@ -1603,6 +1632,7 @@ s:win_execute	./plugged/coc.nvim/autoload/coc/api.vim	/^function! s:win_execute(
 s:win_setview	./plugged/coc.nvim/autoload/coc/float.vim	/^function! s:win_setview(winid, topline, lnum) abort$/;"	f
 s:win_tabnr	./plugged/coc.nvim/autoload/coc/api.vim	/^function! s:win_tabnr(winid) abort$/;"	f
 s:winids	./plugged/coc.nvim/autoload/coc/notify.vim	/^let s:winids = []$/;"	v
+s:wrapenabled	./config.vim	/^let s:wrapenabled = 0$/;"	v
 s:xterm_16colors	./plugged/coc.nvim/autoload/coc/color.vim	/^let s:xterm_16colors = {$/;"	v
 s:xterm_colors	./plugged/coc.nvim/autoload/coc/color.vim	/^let s:xterm_colors = {$/;"	v
 satisfies	./plugged/coc.nvim/build/index.js	/^   %s`,P,P,f,r);let T=f.type==="*"?h0:f.type==="?"?f0:"\\\\"+f.type;o=!0,r=r.slice(0,f.reStart)+/;"	p	property:HM.exports
